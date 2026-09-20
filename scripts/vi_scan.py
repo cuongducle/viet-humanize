@@ -36,6 +36,7 @@ P0_PATTERNS = [
     (r"(?i)(bạn\s+hoàn\s+toàn\s+đúng|đúng\s+như\s+bạn\s+nói|hỏi\s+hay\s+quá)", "vỏ chatbot: tán thưởng người hỏi"),
     (r"(?i)(hãy\s+cho\s+tôi\s+biết\s+nếu|đừng\s+ngần\s+ngại\s+(liên|hỏi)|nếu\s+bạn\s+cần\s+thêm)", "vỏ chatbot: mời hỏi thêm"),
     (r"(?i)(hãy\s+cùng|cùng\s+khám\s+phá|cùng\s+tìm\s+hiểu|hãy\s+khám\s+phá|hãy\s+tìm\s+hiểu)", "mở dàn cảnh: 'hãy cùng...'"),
+    (r"(?i)dưới\s+đây\s+là\s+(một\s+)?(số\s+|những\s+)?(điều|cách|lưu\s+ý|dấu\s+hiệu|lý\s+do|nguyên\s+nhân|con\s+số)", "mở dàn cảnh: 'dưới đây là...'"),
     (r"(?i)trong\s+(thế\s+giới|kỷ\s+nguyên|thời\s+đại)\s+(kỹ\s+thuật\s+so|số\s+hóa|công\s+nghệ)[^.!?]{0,60}(ngày\s+nay|hôm\s+nay)", "mở sáo: 'trong thời đại công nghệ ngày nay'"),
     (r"(?i)không\s+chỉ\s+[^.;!?]{1,80}?\s(mà\s+còn|mà\s+là|đó\s+là)", "tương phản bơm: 'không chỉ ... mà còn'"),
     (r"(?i)không\s+(đơn\s+thuần|phải\s+chỉ|đơn\s+giản\s+là)[^.;!?]{1,80}?\s(mà\s+(là|còn)|đó\s+là)", "tương phản bơm: 'không đơn thuần ... mà là'"),
@@ -64,8 +65,10 @@ P1_PHRASE_STRUCT = [
     (r"(?i)đóng\s+vai\s+trò\s+(quan\s+trọng|then\s+chốt|chủ\s+chốt)", "né động từ 'là': 'đóng vai trò'"),
     (r"(?i)(được\s+xem\s+là|được\s+coi\s+là|hiện\s+diện\s+như\s+một)", "né động từ 'là'"),
     (r"(?i)(chuyên\s+gia\s+cho\s+rằng|các\s+nhà\s+nghiên\s+cứu\s+chỉ\s+ra|báo\s+cáo\s+ngành\s+chỉ\s+ra)", "mượn uy tín không tên"),
-    (r"(?i)(dù\s+(đối\s+mặt|gặp)\s+nhiều\s+thách\s+thức[^.!?]{0,100}?(vẫn|tiếp\s+tục)[^,.!?]{0,25}?(vươn\s+lên|phát\s+triển|thrive))", "khuôn 'dù thách thức ... vẫn vươn lên'"),
+    (r"(?i)một\s+trong\s+những\s+[^.;!?]{1,60}?\s+nhất\s", "khuôn tối thượng: 'một trong những ... nhất'"),
+    (r"(?i)(dù\s+(đối\s+mặt|gặp)\s*(một\s+số\s+|nhiều\s+)?thách\s+thức[^.!?]{0,100}?(vẫn|tiếp\s+tục)[^,.!?]{0,25}?(vươn\s+lên|phát\s+triển|thrive))", "khuôn 'dù thách thức ... vẫn vươn lên'"),
     (r"(?i)(qua\s+đó|nhằm\s+mục\s+đích)[^\n]{0,40}(khẳng\s+định|nhấn\s+mạnh|đề\s+cao|góp\s+phần)", "vế 'qua đó' cầm canh"),
+    (r"(?i)về\s+lâu\s+dài[^.!?]{0,60}(vẫn\s+)?(xứng\s+đáng|đáng\s+giá|đáng\s+đồng)[^.!?]{0,30}(đầu\s+tư|khoản\s+đầu\s+tư)?", "ẩn dụ đầu tư: 'về lâu dài vẫn xứng đáng'"),
     (r"(?i)(khả\s+năng\s+(có\s+thể|nào\s+đó)|có\s+thể\s+nào\s+đó|một\s+cách\s+nào\s+đó)", "hạn định chất chồng"),
 ]
 
@@ -73,7 +76,7 @@ P1_PHRASE_STRUCT = [
 P2_PATTERNS = [
     (r"(?i):?\s*(🚀|💡|✅|🎯|🔥|⭐|👉|✨)", "emoji trang trí"),
     (r"“|”", "ngoặc kép cong"),
-    (r"(?i)^\s*-\s+\*\*[^*]{1,40}\*\*\s*:", "nhãn in đậm + hai chấm trong danh sách"),
+    (r"(?i)^\s*(?:[-*]\s+)?\*\*[^*]{1,40}(\*\*:|:\*\*)", "nhãn in đậm + hai chấm mở câu"),
     (r"^\s*-{3,}\s*$", "đường kẻ ngang ngăn phần"),
 ]
 
