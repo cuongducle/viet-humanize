@@ -57,13 +57,21 @@ Câu dài bằng nhau, đoạn dài bằng nhau (CV thấp, máy quét báo). Vi
 "chuyên gia cho rằng", "các nhà nghiên cứu chỉ ra", "một số ý kiến cho rằng". Có nguồn thật thì nêu nguồn + nội dung; không thì cắt. Không bao giờ bịa nguồn.
 
 ### A13. Ngôn ngữ bán hàng, P1 [W][TT]
-"tọa lạc giữa", "nơi hội tụ", "vẻ đẹp tuyệt diệu", "phong phú đa dạng", "điểm đến lý tưởng", "ấn tượng khó quên". Nêu thẳng sự vật.
+"tọa lạc giữa", "nơi hội tụ", "vẻ đẹp tuyệt diệu", "phong phú đa dạng", "điểm đến lý tưởng", "ấn tượng khó quên"; ẩn dụ đầu tư "về lâu dài vẫn xứng đáng là khoản đầu tư". Nêu thẳng sự vật.
 
 ### A14. Né động từ "là/có", P1 [W][HL]
 "đóng vai trò là", "được xem là", "hiện diện như một", "sở hữu", "mang đến", "cung cấp" thay "là/có". Dùng "là" và "có".
 
 ### A15. Vế "qua đó" cầm canh, P1 [W][HL]
 "qua đó khẳng định", "nhằm đề cao", "góp phần nâng tầm". Giữ fact; chỉ giữ vế khi nguồn hỗ trợ đúng điều nó khẳng định.
+
+### A23. Khuôn tối thượng "một trong những ... nhất", P1 [W][TT]
+Xếp hạng khơi khơi không nguồn: "một trong những công cụ được ưa chuộng nhất", "một trong những yếu tố quan trọng nhất". Hoặc nêu số liệu nguồn, hoặc bỏ hẳn so sánh.
+- Trước: "Notion hiện là một trong những công cụ quản lý công việc được ưa chuộng nhất hiện nay."
+- Sau: "Notion có 100 triệu người dùng (theo công bố của hãng, 2025)." hoặc bỏ câu.
+
+### A24. Ẩn dụ đầu tư, P1 [W]
+Diễn đạt trải nghiệm dùng sản phẩm như "khoản đầu tư", "lợi nhuận", "đáng đồng tiền bỏ ra". Chỉ giữ khi thật sự nói chuyện tài chính.
 
 ## Lớp A, Tàn dư chatbot và bản nháp
 
