@@ -3,7 +3,7 @@ name: viet-humanize
 description: Biên tập văn tiếng Việt bỏ dấu văn AI, dựa trên danh mục dấu hiệu có nguồn trích dẫn (Wikipedia Signs of AI writing, dataset ViDetect, báo chí và giáo viên Việt Nam). Ba chế độ: viết lại, chỉ đánh dấu, sửa tại chỗ file. Kèm máy quét deterministic scripts/vi_scan.py và trình kiểm bảo tồn số liệu. Dùng khi người dùng nói "viết tự nhiên", "không nghe giống AI", "humanize", "bỏ dấu AI", "qua tool dò AI", "kiểm tra văn bản AI", hoặc khi viết/sửa bài tiếng Việt dài.
 license: MIT
 metadata:
-  version: "1.2.0"
+  version: "1.3.0"
 ---
 
 # Viet-humanize: biên tập văn tiếng Việt bỏ dấu AI
@@ -31,7 +31,7 @@ Bước 1, chạy máy quét deterministic:
 ```bash
 python3 scripts/vi_scan.py scan FILE
 ```
-Kết quả là điểm 0-100 + danh sách theo dòng + số nhịp học: CV và độ lệch (skewness) độ dài câu/đoạn, MATTR-50, trợ từ cuối câu, liên từ hình thức, mật độ Hán Việt hành chính, từ láy, entropy dấu câu, tỷ lệ nén zlib. Các chỉ số ngôn ngữ học chỉ tham khảo báo cáo (không cộng điểm, trừ khi tích thành cảnh báo giọng sách vở). Dùng làm rà vòng 1, KHÔNG dùng làm phán quyết.
+Kết quả là điểm 0-100 + danh sách theo dòng + số nhịp học: CV và độ lệch (skewness) độ dài câu/đoạn, MATTR-50, trợ từ cuối câu, liên từ hình thức, mật độ Hán Việt hành chính, từ láy, entropy dấu câu, tỷ lệ nén zlib. Các chỉ số ngôn ngữ học chỉ tham khảo báo cáo (không cộng điểm, trừ khi tích thành cảnh báo giọng sách vở). Ngưỡng nhịp học chính đã hiệu chỉnh trên corpus pilot 42 mẫu (xem references/calibration.md): CV câu < 0,28 tách 0/21 văn người vs 16/21 văn AI; điểm scan tổng hợp chỉ đạt AUC 0,529 trên register trang trọng — máy quét là công cụ biên tập bề mặt, KHÔNG phải bộ phát hiện AI. Dùng làm rà vòng 1, KHÔNG dùng làm phán quyết.
 
 Bước 2, đọc toàn văn và đánh dấu theo danh mục trong references/patterns-full.md, mạnh nhất trước. Nhìn cả hình khối: tương phản xẻ hai câu, bộ ba ở tầm đoạn, cùng một câu chốt lặp sau mỗi phần.
 

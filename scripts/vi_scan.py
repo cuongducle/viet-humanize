@@ -237,14 +237,18 @@ def stylometry(text: str) -> dict:
 def stylometry_warnings(m: dict) -> list:
     w = []
     # ViDetect: người viết nhiều câu hơn / đoạn ngắn hơn; AI: câu ít, đoạn dài đều
-    if m["so_cau"] >= 12 and m["bien_dong_do_dai_cau_cv"] < 0.35:
-        w.append("độ dài câu quá đều (CV < 0,35), thiếu 'burstiness' của văn người")
+    if m["so_cau"] >= 12 and m["bien_dong_do_dai_cau_cv"] < 0.28:
+        w.append("độ dài câu quá đều (CV < 0,28), thiếu 'burstiness' của văn người "
+                 "[hiệu chỉnh pilot n=42: 0/21 văn người, 16/21 văn AI, AUC 0,99]")
     if m["so_doan"] >= 4 and m["bien_dong_do_dai_doan_cv"] < 0.25:
         w.append("độ dài đoạn quá đều (CV < 0,25), kết cấu khuôn")
     if m["so_cau"] >= 12 and m["cau_trung_binh_doan"] > 6:
         w.append("quá nhiều câu mỗi đoạn (> 6), dấu hiệu ViDetect: AI viết đoạn dài")
-    if m["mattr_cua_so_50"] < 0.55 and m["so_cau"] >= 12:
-        w.append("từ vựng lặp lại nhiều (MATTR-50 thấp)")
+    if m["so_cau"] >= 12 and m["entropy_dau_cau_bit"] < 1.0:
+        w.append("phân bố dấu câu nghèo (chủ yếu chấm + phẩy, entropy < 1,0 bit) "
+                 "[pilot n=42: AUC 0,85, văn người md 1,33 / AI 0,99]")
+    # Lưu ý: MATTR-50 KHÔNG dùng làm cảnh báo — pilot cho thấy hướng NGƯỢC
+    # với suy đoán ban đầu (AI có MATTR cao hơn văn người: 0,92 so với 0,86)
     if m["so_dau_bang_than"] >= 3:
         w.append("dấu chấm than dàn trận (>= 3)")
     if (m["so_cau"] >= 12 and m["tro_tu_cuoi_cau"] == 0
@@ -355,6 +359,80 @@ def read_input(path):
             return f.read()
     return sys.stdin.read()
 
+# ---------------------------------------------------------------------------
+# Calibrate: đo khả năng phân tách người/AI của từng chỉ số trên corpus nhỏ
+# (AUC theo Mann-Whitney, đồng hạng lấy hạng trung bình)
+# ---------------------------------------------------------------------------
+
+def _auc(pos, neg):
+    """P(pos > neg) qua hạng trung bình; 0,5 = ngẫu nhiên."""
+    if not pos or not neg:
+        return None
+    vals = [(v, 1) for v in pos] + [(v, 0) for v in neg]
+    vals.sort(key=lambda x: x[0])
+    ranks, i = [0.0] * len(vals), 0
+    while i < len(vals):
+        j = i
+        while j + 1 < len(vals) and vals[j + 1][0] == vals[i][0]:
+            j += 1
+        avg = (i + j) / 2 + 1
+        for k in range(i, j + 1):
+            ranks[k] = avg
+        i = j + 1
+    sp = sum(r for r, (_, g) in zip(ranks, vals) if g == 1)
+    np_, nn = len(pos), len(neg)
+    u = sp - np_ * (np_ + 1) / 2
+    return u / (np_ * nn)
+
+def _file_metrics(path):
+    text = open(path, encoding="utf-8").read()
+    r = scan(text)
+    m = r["nhip_hoc"]
+    n = len(re.findall(r"\w+", apply_exemptions(text).lower())) or 1
+    k = n / 1000
+    return {
+        "diem_scan": r["score"],
+        "tro_tu_cuoi/1k": m["tro_tu_cuoi_cau"] / k,
+        "lien_tu_hinh_thuc/1k": m["lien_tu_hinh_thuc"] / k,
+        "tu_noi_khau_ngu/1k": m["tu_noi_khau_ngu"] / k,
+        "han_viet/1k": m["han_viet_hanh_chinh_tren_1000"],
+        "tu_lay/1k": m["tu_lay"] / k,
+        "bang_than/1k": m["so_dau_bang_than"] / k,
+        "MATTR50": m["mattr_cua_so_50"],
+        "TTR_am_tiet": m["ty_le_tu_rieng_ttr_am_tiet"],
+        "CV_do_dai_cau": m["bien_dong_do_dai_cau_cv"],
+        "skew_do_dai_cau": m["lech_do_dai_cau_skew"],
+        "CV_do_dai_doan": m["bien_dong_do_dai_doan_cv"],
+        "cau/1doan": m["cau_trung_binh_doan"],
+        "tu_trung_binh/câu": m["dai_cau_tb"],
+        "entropy_dau_cau": m["entropy_dau_cau_bit"],
+        "ty_le_nen_zlib": m["do_nen_zlib"],
+    }
+
+def cmd_calibrate(human_dir, ai_dir):
+    from pathlib import Path
+    hfiles = sorted(str(p) for p in Path(human_dir).rglob("*.txt"))
+    afiles = sorted(str(p) for p in Path(ai_dir).rglob("*.md"))
+    if not hfiles or not afiles:
+        print(f"Thiếu corpus: người {len(hfiles)} file txt / AI {len(afiles)} file md")
+        return 2
+    hm = [_file_metrics(f) for f in hfiles]
+    am = [_file_metrics(f) for f in afiles]
+    print(f"corpus: {len(hm)} mẫu người ({human_dir}) vs {len(am)} mẫu AI ({ai_dir})")
+    print(f"{'chỉ số':<22} {'AUC':>5} {'ng hướng':<10} {'md người':>9} {'md AI':>9}")
+    print("-" * 62)
+    rows = []
+    for key in hm[0]:
+        a = _auc([x[key] for x in am], [x[key] for x in hm])
+        mh = sorted(x[key] for x in hm)[len(hm) // 2]
+        ma = sorted(x[key] for x in am)[len(am) // 2]
+        direction = "AI>ng" if a >= 0.5 else "ng>AI"
+        rows.append((max(a, 1 - a), key, a, direction, mh, ma))
+    for disp, key, a, direction, mh, ma in sorted(rows, reverse=True):
+        print(f"{key:<22} {max(a, 1 - a):>5.3f} {direction:<10} {mh:>9.3f} {ma:>9.3f}")
+    print("AUC > 0,5 = chỉ số cao hơn ở AI; in theo max(AUC, 1-AUC)")
+    return 0
+
 def main():
     args = sys.argv[1:]
     if not args:
@@ -410,6 +488,12 @@ def main():
         assert s_dirty > s_clean, f"selftest lỗi: {s_dirty} <= {s_clean}"
         print(f"selftest OK: văn AI-đậm score={s_dirty}, văn sạch score={s_clean}")
         return 0
+
+    if cmd == "calibrate":
+        if len(args) < 3:
+            print("Cần 2 thư mục: calibrate THƯ_MỤC_NGƯỜI THƯ_MỤC_AI")
+            return 2
+        return cmd_calibrate(args[1], args[2])
 
     print(f"Lệnh không rõ: {cmd}")
     print(__doc__)

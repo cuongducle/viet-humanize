@@ -84,3 +84,11 @@ Phương pháp định lượng:
 - Jiang và cộng sự (2023): phân loại văn bản bằng compressor — cơ sở cho tỷ lệ nén zlib (chỉ tham khảo).
 
 Trung thực về chỉ số mới: trợ từ cuối câu, liên từ hình thức, Hán Việt hành chính, từ láy, skewness, entropy dấu câu, zlib đều là **chỉ báo tham khảo, chưa hiệu chỉnh ngưỡng trên corpus song sinh tiếng Việt** (khoảng trống 1). Từ láy đếm bằng danh sách ~65 từ tuyển chọn: precision cao, recall thấp (có chấp nhận, đã ghi). Nhãn [NN] dùng cho sự kiện mô tả chuẩn, không được hiểu là thống kê AI.
+
+## 8. Hiệu chỉnh pilot (v1.3, 2026-09-21)
+
+Corpus 42 mẫu (21 người: Wikipedia VI + VnExpress; 21 AI: trợ lý LLM chế độ mặc định).
+Kết quả chính: CV độ dài câu AUC 0,99; TTR/MATTR/entropy dấu câu 0,85-0,94; điểm scan
+tổng hợp chỉ 0,529; MATTR ngược hướng suy đoán ban đầu. Chi tiết: references/calibration.md.
+Khoảng trống 1 được thu hẹp một phần: ngưỡng nhịp học đã có số liệu riêng cho tiếng Việt
+register trang trọng; register khẩu ngữ/blog vẫn chưa đo được (trợ từ, từ láy đều md=0).
