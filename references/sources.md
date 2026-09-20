@@ -70,3 +70,17 @@ Chạy `python3 scripts/vi_scan.py scan <file>` trên chính các file của ski
 | references/sources.md | 3 | từ "vượt trội" trong bảng từ vựng |
 
 Lần tự kiểm thứ hai (2026-09-21, sau khi vá máy quét v1.1 phát hiện khi tự test trên chính output mặc định của trợ lý): bản "truoc" mẫu 42 điểm được bắt thêm "dưới đây là", "một trong những ... nhất", nhãn in đậm (dấu hai chấm trong lẫn ngoài cặp đậm), ẩn dụ đầu tư, lên 55; bản viết lại giữ 0 điểm; self-scan SKILL.md 13 (tự tham chiếu: nhãn Trước/Sau, danh sách P0/P1/P2). Điểm không bằng 0 vì danh mục chứa chính các dấu nó liệt kê, và các vùng miễn trừ (trích dẫn trong ngoặc kép) không phủ hết ngữ cảnh liệt kê. Đây là hiện tượng như avoid-ai-writing đã công bố trong PROOF.md của họ ("the catalog contains the words it catalogs"). Số này là Snapshot; chạy lại lệnh để có số hiện tại. Bản thân văn xuôi của skill đã được dọn một lượt theo luật của chính nó (từ 92 xuống 11 ở SKILL.md) trước khi công bố.
+
+## 7. Nguồn ngôn ngữ học và phương pháp định lượng (v1.2)
+
+Thêm sau câu hỏi "về mặt ngôn ngữ học thì còn cải thiện gì" (2026-09-21). Nền mô tả tiếng Việt:
+- Thompson, Laurence (1965). *A Vietnamese Reference Grammar*. — mô tả chuẩn trợ từ, danh từ phân loại, từ láy.
+- Nguyễn Tài Cẩn (1975). *Câu tiếng Việt*. — đặc tính ngữ pháp câu, chủ ngữ.
+- Cao Xuân Hạo (1998). *Tiếng Việt, văn Việt, người Việt*. — tạp bút về phong cách và văn hóa ngôn ngữ.
+
+Phương pháp định lượng:
+- Covington & McFall (2010): MATTR (TTR cửa sổ trượt) — thay TTR toàn cục vốn lệ thuộc độ dài văn bản; tiếng Việt tính trên âm tiết do chưa tách từ.
+- Gries (2008): độ phân tán từ vựng — cơ sở lý thuyết cho hướng mở (chưa cài).
+- Jiang và cộng sự (2023): phân loại văn bản bằng compressor — cơ sở cho tỷ lệ nén zlib (chỉ tham khảo).
+
+Trung thực về chỉ số mới: trợ từ cuối câu, liên từ hình thức, Hán Việt hành chính, từ láy, skewness, entropy dấu câu, zlib đều là **chỉ báo tham khảo, chưa hiệu chỉnh ngưỡng trên corpus song sinh tiếng Việt** (khoảng trống 1). Từ láy đếm bằng danh sách ~65 từ tuyển chọn: precision cao, recall thấp (có chấp nhận, đã ghi). Nhãn [NN] dùng cho sự kiện mô tả chuẩn, không được hiểu là thống kê AI.

@@ -77,6 +77,7 @@ P2_PATTERNS = [
     (r"(?i):?\s*(🚀|💡|✅|🎯|🔥|⭐|👉|✨)", "emoji trang trí"),
     (r"“|”", "ngoặc kép cong"),
     (r"(?i)^\s*(?:[-*]\s+)?\*\*[^*]{1,40}(\*\*:|:\*\*)", "nhãn in đậm + hai chấm mở câu"),
+    (r";", "dấu chấm phẩy (rất hiếm trong văn người Việt)"),
     (r"^\s*-{3,}\s*$", "đường kẻ ngang ngăn phần"),
 ]
 
@@ -101,6 +102,78 @@ def apply_exemptions(text: str) -> str:
 # có câu ít hơn, đoạn dài và đều hơn, kém bộc lộ cảm xúc
 # ---------------------------------------------------------------------------
 
+# Trợ từ cuối câu (Thompson 1965; Cao Xuân Hạo 1998): dấu khẩu ngữ tiếng Việt,
+# đầu ra AI hầu như không dùng — tín hiệu NGƯỜI
+FINAL_PARTICLES = {"nhé", "đấy", "đó", "cơ", "nhỉ", "ạ", "nghe", "nào", "thôi", "vậy"}
+# Liên từ hình thức (sách vở) mà AI ưa
+FORMAL_CONNECTIVES = ["ngoài ra", "bên cạnh đó", "hơn nữa", "thêm vào đó", "do đó",
+                      "vì vậy", "bởi vậy", "do vậy", "ngoài việc", "đồng thời",
+                      "trước hết", "tóm lại", "nhìn chung", "chung quy lại"]
+# Từ nối khẩu ngữ mà người hay dùng
+COLLOQUIAL_MARKERS = ["thế là", "cơ mà", "mà thôi", "thôi thì", "thật ra",
+                      "tiện thể", "kiểu như", "rồi là", "à mà"]
+# Động từ Hán Việt hành chính (mật độ cao = giọng công văn)
+SINO_VERBS = ["triển khai", "ứng dụng", "giải pháp", "tiến hành", "đảm bảo",
+              "tăng cường", "thúc đẩy", "quảng bá", "chủ trương", "phổ biến",
+              "nâng cao", "thực hiện"]
+STOP_ADJ = {"và", "của", "là", "một", "những", "các", "cho", "không", "có",
+            "được", "với", "người", "bạn", "chúng", "ta", "nó", "họ", "anh",
+            "chị", "em", "ông", "bà", "rất", "cũng", "đã", "sẽ", "vào", "ra"}
+
+def _mattr(tokens, w=50):
+    """MATTR (Covington & McFall 2010): TTR cửa sổ trượt, khống chế độ dài văn bản."""
+    n = len(tokens)
+    if n == 0:
+        return 0.0
+    if n <= w:
+        return len(set(tokens)) / n
+    vals = [len(set(tokens[i:i + w])) / w for i in range(n - w + 1)]
+    return sum(vals) / len(vals)
+
+def _skew(xs):
+    """Hệ số lệch của phân bố độ dài câu (văn người thường lệch phải dương)."""
+    n = len(xs)
+    if n < 3:
+        return 0.0
+    mean = sum(xs) / n
+    sd = math.sqrt(sum((x - mean) ** 2 for x in xs) / n)
+    if sd == 0:
+        return 0.0
+    return sum(((x - mean) / sd) ** 3 for x in xs) / n
+
+# Từ láy (Thompson 1965: đặc trưng hình thái tiếng Việt): người dùng giàu,
+# AI gần như không sinh từ láy mới — tín hiệu NGƯỜI. Đếm bằng danh sách tuyển
+# chọn để giữ độ chính xác (heuristic tự do bắn quá tay, xem methodology.md)
+REDUP_LIST = [
+    "lao xao", "lấp lánh", "lấp ló", "lom khom", "lũ lượt", "la liệt",
+    "líu lo", "líu lưỡi", "lì lì", "rì rầm", "rộn ràng", "rạo rực",
+    "run rẩy", "xào xạc", "sa sút", "lạnh lẽo", "rung rinh", "lắc lư",
+    "mong manh", "mong ngóng", "mòn mỏi", "mỏi mòn", "sạch sẽ", "xinh xắn",
+    "gọn gàng", "gầy gò", "gầy guộc", "ú ớ", "ấp úng", "nhấp nhô",
+    "nhấp nháy", "với vã", "vội vàng", "méo mó", "lơ ngơ", "lấm lem",
+    "lúng túng", "văng vẳng", "lè tẻ", "lê thê", "liu riu", "liu điu",
+    "nhoè nhoẹt", "toe toé", "lù mù", "mù mịt", "mịt mù", "tù mù",
+    "ủ rũ", "lung linh", "long lanh", "mơ màng", "mơ mộng", "thì thầm",
+    "tí tách", "lách cách", "lạch cạch", "lục đục", "bâng khuâng",
+    "lấp lửng", "lăn tăn", "lăn quay", "tím tái", "xanh xao", "trơn tru",
+    "ấm áp", "náo nức", "nôn nao", "ngơ ngác", "ngẩn ngơ", "bồn chồn",
+    "thấp thỏm", "thấp thoáng", "đông đúc", "chật chội",
+]
+
+def _reduplication(low_text):
+    """Đếm từ láy xuất hiện trong văn bản (danh sách tuyển chọn)."""
+    return sum(1 for w in set(REDUP_LIST) if w in low_text)
+
+def _punct_entropy(text):
+    counts = {}
+    for ch in text:
+        if ch in ".,!?;:…—-":
+            counts[ch] = counts.get(ch, 0) + 1
+    total = sum(counts.values())
+    if total == 0:
+        return 0.0
+    return -sum((c / total) * math.log2(c / total) for c in counts.values())
+
 def stylometry(text: str) -> dict:
     paras = [p.strip() for p in re.split(r"\n\s*\n", text) if p.strip()]
     sentences = [s.strip() for s in re.split(r"[.!?…]+", text) if s.strip()]
@@ -118,8 +191,25 @@ def stylometry(text: str) -> dict:
 
     words = re.findall(r"\w+", text.lower())
     ttr = len(set(words)) / len(words) if words else 0.0
+    mattr = _mattr(words)
     bang = len(re.findall(r"!", text))
     sent_per_para = len(sentences) / len(paras) if paras else 0
+
+    # Trợ từ cuối câu: từ cuối mỗi câu (bỏ dấu câu, ngoặc)
+    particles = 0
+    for s in sentences:
+        ws = re.findall(r"\w+", s.lower())
+        if ws and ws[-1] in FINAL_PARTICLES:
+            particles += 1
+    low = text.lower()
+    formal = sum(low.count(c) for c in FORMAL_CONNECTIVES)
+    colloq = sum(low.count(c) for c in COLLOQUIAL_MARKERS)
+    sino = sum(low.count(v) for v in SINO_VERBS)
+    per_k = lambda x: round(1000 * x / len(words), 1) if words else 0.0
+
+    import zlib
+    raw = text.encode("utf-8")
+    gzip_ratio = round(len(zlib.compress(raw)) / len(raw), 3) if raw else 0.0
 
     return {
         "so_cau": len(sentences),
@@ -127,9 +217,20 @@ def stylometry(text: str) -> dict:
         "cau_trung_binh_doan": round(sent_per_para, 2),
         "dai_cau_tb": round(sum(lens) / len(lens), 1) if lens else 0,
         "bien_dong_do_dai_cau_cv": round(cv(lens), 2),
+        "lech_do_dai_cau_skew": round(_skew(lens), 2),
         "bien_dong_do_dai_doan_cv": round(cv(plens), 2),
-        "ty_le_tu_rieng_ttr": round(ttr, 3),
+        "ty_le_tu_rieng_ttr_am_tiet": round(ttr, 3),
+        "mattr_cua_so_50": round(mattr, 3),
         "so_dau_bang_than": bang,
+        "tro_tu_cuoi_cau": particles,
+        "tro_tu_cuoi_cau_tren_1000": per_k(particles),
+        "lien_tu_hinh_thuc": formal,
+        "lien_tu_hinh_thuc_tren_1000": per_k(formal),
+        "tu_noi_khau_ngu": colloq,
+        "han_viet_hanh_chinh_tren_1000": per_k(sino),
+        "tu_lay": _reduplication(low),
+        "entropy_dau_cau_bit": round(_punct_entropy(text), 2),
+        "do_nen_zlib": gzip_ratio,
         "canh_bao": [],
     }
 
@@ -137,15 +238,19 @@ def stylometry_warnings(m: dict) -> list:
     w = []
     # ViDetect: người viết nhiều câu hơn / đoạn ngắn hơn; AI: câu ít, đoạn dài đều
     if m["so_cau"] >= 12 and m["bien_dong_do_dai_cau_cv"] < 0.35:
-        w.append("độ dài câu quá đều (CV < 0,35) — thiếu 'burstiness' của văn người")
+        w.append("độ dài câu quá đều (CV < 0,35), thiếu 'burstiness' của văn người")
     if m["so_doan"] >= 4 and m["bien_dong_do_dai_doan_cv"] < 0.25:
-        w.append("độ dài đoạn quá đều (CV < 0,25) — kết cấu khuôn")
+        w.append("độ dài đoạn quá đều (CV < 0,25), kết cấu khuôn")
     if m["so_cau"] >= 12 and m["cau_trung_binh_doan"] > 6:
-        w.append("quá nhiều câu mỗi đoạn (> 6) — dấu hiệu ViDetect: AI viết đoạn dài")
-    if m["ty_le_tu_rieng_ttr"] < 0.35 and m["so_cau"] >= 12:
-        w.append("từ vựng lặp lại nhiều (TTR thấp)")
+        w.append("quá nhiều câu mỗi đoạn (> 6), dấu hiệu ViDetect: AI viết đoạn dài")
+    if m["mattr_cua_so_50"] < 0.55 and m["so_cau"] >= 12:
+        w.append("từ vựng lặp lại nhiều (MATTR-50 thấp)")
     if m["so_dau_bang_than"] >= 3:
         w.append("dấu chấm than dàn trận (>= 3)")
+    if (m["so_cau"] >= 12 and m["tro_tu_cuoi_cau"] == 0
+            and m["lien_tu_hinh_thuc"] >= 3):
+        w.append("không trợ từ cuối câu + nhiều liên từ hình thức: giọng sách vở "
+                 "(hợp lệ với văn học thuật/formal, cân nhắc ngữ cảnh)")
     return w
 
 # ---------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-# Danh mục dấu hiệu đầy đủ (25 dấu, trước/sau, nhãn nguồn)
+# Danh mục dấu hiệu đầy đủ (30 dấu, trước/sau, nhãn nguồn)
 
 Lớp A = dấu phổ quát (khái niệm dịch từ Wikipedia Signs of AI writing, ví dụ viết lại cho tiếng Việt).
 Lớp B = dấu riêng của tiếng Việt (nguồn ghi từng dấu).
@@ -116,6 +116,21 @@ Trộn "bạn" / "chúng ta" / "mình" / "anh/chị" trong cùng bài. Chọn m�
 
 ### B5. Chuẩn số liệu Việt, quy tắc bắt buộc
 Dấu phẩy thập phân (9,81 triệu); "tệ" thay ký hiệu tiền Trung Quốc trong câu tiếng Việt; tên riêng Latin giữ nguyên; thuật ngữ Trung Quốc latin hóa + giải thích lần đầu.
+
+### B8. Trợ từ cuối câu, tín hiệu NGƯỜI — P2 (chỉ báo, không trừ) [NN][HL]
+"nhé, đấy, cơ, nhỉ, ạ, nghe, nào, thôi, vậy" cuối câu là dấu khẩu ngữ tiếng Việt; đầu ra AI gần như không dùng. Khi viết lại văn thân mật: thêm 1-2 đúng chỗ, không rải đều. Máy quét báo mật độ; 0 trợ từ + nhiều liên từ hình thức = cảnh báo giọng sách vở (văn học thuật/formal thì cảnh báo này bỏ qua).
+
+### B9. Liên từ hình thức thay từ nối tự nhiên, P1 [TT][HL]
+AI chuộng "ngoài ra, bên cạnh đó, hơn nữa, thêm vào đó, do đó, đồng thời, trước hết, tóm lại, nhìn chung". Người viết đời thường dùng "thế là, cơ mà, mà thôi, thật ra, tiện thể, rồi". Sửa: đổi bớt liên từ hình thức theo ngữ cảnh; không đổi trong văn học thuật.
+
+### B10. Mật độ Hán Việt hành chính, P1 [TT]
+"triển khai, ứng dụng, giải pháp, tiến hành, đảm bảo, tăng cường, thúc đẩy, quảng bá, chủ trương, thực hiện" dồn cục tạo giọng công văn. Người viết xen động từ thuần: làm, dùng, đưa ra, chạy thử, lan ra. Giữ khi là thuật ngữ ngành đúng chỗ; chỉ thay khi đang làm từ đệm. Máy quét báo mật độ trên 1000 âm tiết.
+
+### B11. Từ láy, tín hiệu NGƯỜI [NN]
+"lao xao, lấp lánh, nhấp nhô, méo mó, sạch sẽ, gọn gàng": người dùng giàu, AI gần như không sinh từ láy mới. Văn thân mật nên có 1-2 từ láy đúng cảnh. Máy quét đếm bằng danh sách tuyển chọn (~65 từ thường gặp) để giữ độ chính xác.
+
+### B12. Dấu chấm phẩy, P2 [TT]
+Người Việt gần như không dùng ";" trong văn thường; máy hay bản dịch hay dùng. Thay bằng dấu chấm hoặc viết tách câu.
 
 ## Lớp B, Giữ lại (chống sửa quá tay)
 
