@@ -139,3 +139,13 @@ Chi tiết lạ có thật ("cô luật sư từng làm tầng trên phòng khá
 
 ### B7. Hạn định hợp lệ, bảo vệ [W]
 "có lẽ", "thường là", "đại khái" là thói quen người thật. Chỉ cắt khi chất chồng (A9).
+
+## B13. Dòng từ Hán Việt trừu tượng — P1 [VD][TT]
+
+Văn AI tiếng Việt chứa động từ, danh từ Hán Việt trừu tượng với mật độ gấp 4 lần văn người trong pilot (10,4 so với 2,6 trên 1000 âm tiết, AUC 0,72): triển khai, tối ưu, nâng cao, thúc đẩy, khắc phục, tạo điều kiện, khả thi, bền vững.
+
+Trước (đậm đặc kiểu máy): "Đơn vị triển khai giải pháp tối ưu quy trình, nâng cao hiệu quả và tạo điều kiện thúc đẩy phát triển bền vững."
+
+Sau: "Đơn vị đưa quy trình mới vào dùng cho chắc, chạy nhanh hơn, và để anh em làm việc đỡ mệt."
+
+Ngoại lệ: văn pháp luật, báo chí chính luận, học thuật vốn giàu Hán Việt; chỉ cảnh báo khi mật độ vượt ngưỡng và register không đòi hỏi. Danh sách từng từ lẻ trong pilot bị nhiễu chủ đề (corpus chưa khớp chủ đề từng bài), nên chỉ mật độ là bằng chứng, không kết luận từng từ riêng lẻ.

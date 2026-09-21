@@ -100,3 +100,10 @@ bản cuối 0/100, verify bảo toàn pass sau khi nháp bổ sung đủ fact. 
 phát hiện biến thể tổng quát "trong thời đại X ngày nay" mà regex cũ (chỉ khớp
 'công nghệ/số hóa') bỏ sót: đã vá P0. Verify cũng lộ bug hiển thị chênh lệch
 multiset (trùng lặp số lần): đã vá Counter. Minh chứng cho vai trò của lớp đọc tay.
+
+## 10. Nguồn tầng chọn từ (2026-09-21)
+
+- Georgiou 2025, MDPI Languages 10(5):166: văn AI nhiều từ khó, từ nội dung hơn; văn người nhiều từ chức năng hơn (tiếng Anh). Không tái lập ở tầng âm tiết tiếng Việt trên pilot (AUC 0,43), ghi nhận là kết quả âm.
+- Gude, Santos-Ríos, Bond và cộng sự 2026, arXiv 2605.06030: model sau tinh chỉnh lệnh có đa dạng từ vựng và cú pháp giảm rõ so với model gốc; văn báo người gần như không đổi theo năm. Hợp lệ với hiện tượng "chọn từ đều nhau giữa các bài" (cùng Chen 2026, Oxford: văn AI đồng nhất về văn phong).
+- Monroe, Colaresi, Quinn 2008: phương pháp log-odrs z-score (fightin' words) cho phân tích từ khác biệt, dùng trong research/lexical_analysis.py.
+- Pilot (n=42, một mô hình, chủ đề chưa khớp từng cặp): mật độ động từ Hán Việt trừu tượng tách tốt (AUC 0,72, người 2,6 so với AI 10,4 trên 1000); phó từ cường độ yếu (0,55); tỷ lệ từ chức năng không tách (0,43). Danh sách từ lẻ nghiêng về từ trừu tượng kiểu sách vở ở phía AI (chương trình, hệ thống, dự án, cơ hội, chức năng, dữ liệu) và về năm tháng, vật cụ thể ở phía người, nhưng bị nhiễu chủ đề nên chỉ nêu làm giả thuyết.
