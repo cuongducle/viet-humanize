@@ -159,3 +159,11 @@ Trước (kiểu máy): "Vui lòng gửi yêu cầu kéo đến kho mã nguồn;
 Sau: "Muốn góp code thì gửi pull request vào repo, team sẽ review rồi merge theo roadmap."
 
 Ngoại lệ: văn bản pháp lý, hành chính, báo in theo quy định dùng thuật ngữ Việt, ghi kèm tiếng Anh lần đầu. Trộn từ Anh cũng phải có chừng mực: chừa lại từ thông dụng thôi, cả câu tiếng Anh hoặc tiếng Việt nhập múi kiểu lai căng lại thành dấu khác.
+
+### B8-bổ-sung (sau eval v2): trợ từ cuối câu chưa kiểm chứng trên register báo chí-giọng trẻ
+
+Eval v2 đo trợ từ cuối câu trên 12 cặp Góc nhìn/Genk/Kenh14: trung vị cả hai bên đều 0 (AUC 0,65 lệch vì vài bài). Kết luận: báo chí 'giọng trẻ' của người thật vẫn ít trợ từ cuối câu, tín hiệu này chỉ còn là giả thuyết cho register chat/tình cảm thân mật. Không dùng nó làm dấu hiệu quyết định.
+
+### B15. Cấu trúc đoạn khẩu ý (đo được ở v2), P1 [VD]
+
+Eval v2 (12 cặp): câu trung bình mỗi đoạn người 1,7 so với AI 7,0 (AUC 1,000, corpus nhỏ nên coi là ước lượng mạnh chứ không tuyệt đối). Văn người viết báo giọng trẻ tách đoạn rất ngắn, gần như mỗi ý một đoạn. AI giữ thói quen gộp 5-7 câu một đoạn dù đổi giọng. Khi viết lại register này: tách đoạn mạnh tay.

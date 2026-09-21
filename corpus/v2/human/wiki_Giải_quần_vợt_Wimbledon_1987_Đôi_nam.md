@@ -1,0 +1,3 @@
+Joakim Nyström và Mats Wilander là đương kim vô địch, tuy nhiên thất bại ở vòng hai trước Carl Limberger và Mark Woodforde.
+Ken Flach và Robert Seguso đánh bại Sergio Casal và Emilio Sánchez trong trận chung kết, 3–6, 6–7(6–8), 7–6(7–3), 6–1, 6–4 để giành chức vô địch Đôi nam tại Giải quần vợt Wimbledon 1987.
+Thất bại của Stefan Edberg và Anders Järryd trong trận bán kết trước Casal và Sanchez là trận thua Grand Slam duy nhất của Järryd trong năm 1989, khi anh vô địch Giải quần vợt Úc Mở rộng và Giải quần vợt Mỹ Mở rộng với Edberg và Giải quần vợt Pháp Mở rộng với Seguso.

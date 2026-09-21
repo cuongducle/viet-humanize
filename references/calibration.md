@@ -65,3 +65,5 @@ Hướng viết lại từ dữ liệu: **phân bố độ dài câu rộng hơn
   định lượng) — còn nhiễu confound.
 - Không khẳng định tổng quát cho các mô hình AI khác, cho văn sáng tác, hay cho tiếng
   Việt chuẩn miền Nam/Bắc riêng.
+
+Bản nâng cấp: xem references/eval-v2.md (corpus v2 khớp chủ đề, thêm register khẩu ý).

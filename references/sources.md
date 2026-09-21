@@ -110,3 +110,11 @@ Vòng dogfood 2 (v1.4.1, trên chính README): scan 0/100 và mật độ Hán V
 - Monroe, Colaresi, Quinn 2008: phương pháp log-odrs z-score (fightin' words) cho phân tích từ khác biệt, dùng trong research/lexical_analysis.py.
 - Quy tắc giữ nguyên từ tiếng Anh thông dụng (B14): quan sát thực hành [TT], ăn khớp với chỉ số mật độ Hán Việt đo được (deploy dịch thành triển khai là đúng cụm bị đếm). Chưa có thống kê tần suất song hành Anh-Việt công khai, ghi là khoảng trống.
 - Pilot (n=42, một mô hình, chủ đề chưa khớp từng cặp): mật độ động từ Hán Việt trừu tượng tách tốt (AUC 0,72, người 2,6 so với AI 10,4 trên 1000); phó từ cường độ yếu (0,55); tỷ lệ từ chức năng không tách (0,43). Danh sách từ lẻ nghiêng về từ trừu tượng kiểu sách vở ở phía AI (chương trình, hệ thống, dự án, cơ hội, chức năng, dữ liệu) và về năm tháng, vật cụ thể ở phía người, nhưng bị nhiễu chủ đề nên chỉ nêu làm giả thuyết.
+
+## 11. Eval v2 (2026-09-21, corpus khớp chủ đề + register khẩu ý)
+
+- Thiết kế: 20 cặp trang trọng (wiki/news) và 12 cặp khẩu ý (VnExpress Góc nhìn, Genk, Kenh14), AI cùng chủ đề từng cặp, một mô hình. Script research/eval_v2.py, báo cáo references/eval-v2.md.
+- Tái hiện: CV độ dài câu vẫn tách gần tuyệt đối (0,993; ngưỡng 0,29 cho 0 FP người / 19 TP AI). TTR và MATTR vẫn AI CAO hơn người (0,92 / 0,90) — kết luận 'AI đa dạng từ hơn người' giờ đứng vững trên corpus khớp chủ đề.
+- Fightin' words hết nhiễu chủ đề: phía AI toàn âm tiết trừu tượng (nổi, năng, tạo, hội, nhân, sản, cầu), phía người là năm, tháng, số, và (Genk/Kenh14) 'the' — bằng chứng trộn Anh của người thật, ủng hộ B14. Khẩu ý: người dùng tôi, anh, chơi; AI phi-ngôi.
+- Kết quả âm công bố: trợ từ cuối câu KHÔNG tách trên register báo chí giọng trẻ (trung vị 0/0), hạ B8 xuống giả thuyết. Điểm scan 0,62 (trang trọng) / 0,76 (khẩu ý): máy quét bắt được nhiều hơn ở khẩu ý nhưng vẫn không phải detector.
+- Giới hạn: n nhỏ (12 cặp khẩu ý), một mô hình, các chỉ số 1,000 cần corpus lớn hơn trước khi tin là tách tuyệt đối.
