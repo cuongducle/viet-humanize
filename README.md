@@ -2,7 +2,7 @@
 
 Skill cho AI coding agent: biên tập văn tiếng Việt cho bớt "giọng máy", mà không làm hỏng số liệu lẫn khối code. Chạy được trên pi, Claude Code, Cursor, hoặc bất kỳ agent nào đọc được định dạng SKILL.md.
 
-Đầu ra LLM bằng tiếng Việt có thói quen khá dễ nhận. Câu dài đều như nhau (hệ số biến thiên quanh 0,2, trong khi văn người vào khoảng 0,43), xoay vòng từ đồng nghĩa thay vì lặp lại từ khoá, mở bài kiểu sáo rỗng, nhãn in đậm đóng vai đề mục. Skill dạy agent nhận các thói quen đó rồi sửa theo quy trình 5 bước: máy quét chạy một lượt, agent tự đọc một lượt nữa cho bắt thứ regex bỏ sót, viết lại cả câu lẫn cách chọn từ, cuối cùng kiểm tra xem số liệu lẫn khối code còn nguyên hay không.
+Đầu ra LLM bằng tiếng Việt có thói quen khá dễ nhận. Câu dài đều như nhau (hệ số biến thiên quanh 0,2, trong khi văn người vào khoảng 0,43), xoay vòng từ đồng nghĩa thay vì lặp lại từ khoá, mở bài kiểu sáo rỗng, nhãn in đậm đóng vai đề mục. Skill dạy agent nhận các thói quen đó rồi sửa theo quy trình 5 bước: máy quét chạy một lượt, agent tự đọc một lượt nữa cho bắt thứ regex bỏ sót, viết lại cả câu lẫn cách chọn từ, cuối cùng kiểm tra xem số liệu và khối code còn nguyên hay không.
 
 ## Cài đặt
 
@@ -56,8 +56,8 @@ Ngưỡng 0,28 bắt 16/21 văn AI với 0/21 sai báo trên văn người. Về
 
 ## Nguồn và giới hạn
 
-Danh sách dấu hiệu không tự bịa ra. Nó đồng bộ tư tưởng với bài "Signs of AI writing" của Wikipedia (dự án WikiProject AI Cleanup), kế thừa phương pháp tự quét và đo sai báo của avoid-ai-writing (conorbronsdon), quy trình bản địa hóa từng ngôn ngữ của jurigis, và các đặc trưng nhịp học từ bộ dữ liệu ViDetect (arXiv 2405.03206), cộng thêm so sánh từ vựng theo Georgiou 2025 và Gude 2026 (arXiv 2605.06030).
+Danh sách dấu hiệu không tự bịa ra. Nó lấy nền từ bài "Signs of AI writing" của Wikipedia (dự án WikiProject AI Cleanup), kế thừa phương pháp tự quét và đo sai báo của avoid-ai-writing (conorbronsdon), quy trình bản địa hóa từng ngôn ngữ của jurigis, và các đặc trưng nhịp học từ bộ dữ liệu ViDetect (arXiv 2405.03206), cộng thêm so sánh từ vựng theo Georgiou 2025 và Gude 2026 (arXiv 2605.06030).
 
-Giới hạn lớn nhất hiện nằm ở register khẩu ngữ: trợ từ cuối câu, từ láy, từ nối đời thường vẫn là suy diễn, vì corpus pilot chưa có văn thân mật để đo. Dùng skill cho blog, mạng xã hội thì nên đọc kỹ phần hạn hạn chế trong references/sources.md trước.
+Giới hạn lớn nhất hiện nằm ở register khẩu ngữ: trợ từ cuối câu, từ láy, từ nối đời thường vẫn là suy diễn, vì corpus pilot chưa có văn thân mật để đo. Dùng skill cho blog, mạng xã hội thì nên đọc kỹ phần hạn chế trong references/sources.md trước.
 
 Giấy phép MIT.

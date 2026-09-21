@@ -42,37 +42,41 @@ def auc(xs, ys):  # Mann-Whitney, tie-averaged; xs = human, ys = ai
     n1, n0 = len(ys), len(xs)
     return (r1 - n1 * (n1 + 1) / 2) / (n1 * n0)
 
-H = sorted(glob.glob("corpus/human/**/*.txt")); A = sorted(glob.glob("corpus/ai/**/*.md"))
-th, ta = [toks(p) for p in H], [toks(p) for p in A]
+def main():
+    H = sorted(glob.glob("corpus/human/**/*.txt")); A = sorted(glob.glob("corpus/ai/**/*.md"))
+    th, ta = [toks(p) for p in H], [toks(p) for p in A]
 
-def dens(words, phrases, per=1000):
-    s = " ".join(words); n = len(words)
-    return per * sum(s.count(p) for p in phrases) / max(n, 1)
+    def dens(words, phrases, per=1000):
+        s = " ".join(words); n = len(words)
+        return per * sum(s.count(p) for p in phrases) / max(n, 1)
 
-# 1) tỷ lệ từ chức năng
-fh = [sum(1 for w in t if w in FUNCTION) / len(t) for t in th]
-fa = [sum(1 for w in t if w in FUNCTION) / len(t) for t in ta]
-print(f"tỷ_lệ_từ_chức_năng: người median {sorted(fh)[len(fh)//2]:.3f}, AI {sorted(fa)[len(fa)//2]:.3f}, AUC={auc(fh, fa):.3f}")
+    # 1) tỷ lệ từ chức năng
+    fh = [sum(1 for w in t if w in FUNCTION) / len(t) for t in th]
+    fa = [sum(1 for w in t if w in FUNCTION) / len(t) for t in ta]
+    print(f"tỷ_lệ_từ_chức_năng: người median {sorted(fh)[len(fh)//2]:.3f}, AI {sorted(fa)[len(fa)//2]:.3f}, AUC={auc(fh, fa):.3f}")
 
-# 2) mật độ Hán Việt động từ + phó từ cường độ
-sh = [dens(t, SINO_VERBS) for t in th]; sa = [dens(t, SINO_VERBS) for t in ta]
-print(f"hán_việt_động_từ/1000: người {sorted(sh)[len(sh)//2]:.1f}, AI {sorted(sa)[len(sa)//2]:.1f}, AUC={auc(sh, sa):.3f}")
-ih = [dens(t, INTENSIFIERS) for t in th]; ia = [dens(t, INTENSIFIERS) for t in ta]
-print(f"phó_từ_cường_độ/1000: người {sorted(ih)[len(ih)//2]:.1f}, AI {sorted(ia)[len(ia)//2]:.1f}, AUC={auc(ih, ia):.3f}")
+    # 2) mật độ Hán Việt động từ + phó từ cường độ
+    sh = [dens(t, SINO_VERBS) for t in th]; sa = [dens(t, SINO_VERBS) for t in ta]
+    print(f"hán_việt_động_từ/1000: người {sorted(sh)[len(sh)//2]:.1f}, AI {sorted(sa)[len(sa)//2]:.1f}, AUC={auc(sh, sa):.3f}")
+    ih = [dens(t, INTENSIFIERS) for t in th]; ia = [dens(t, INTENSIFIERS) for t in ta]
+    print(f"phó_từ_cường_độ/1000: người {sorted(ih)[len(ih)//2]:.1f}, AI {sorted(ia)[len(ia)//2]:.1f}, AUC={auc(ih, ia):.3f}")
 
-# 3) fightin' words
-from collections import Counter
-ch = Counter(w for t in th for w in t); ca = Counter(w for t in ta for w in t)
-nh, na = sum(ch.values()), sum(ca.values())
-bg = ch + ca; nb = nh + na; alpha0 = 100.0
-vocab = {w: alpha0 * c / nb for w, c in bg.items()}
-def z(w):
-    a_w, b_w = ca.get(w, 0), ch.get(w, 0); al = vocab.get(w, 0.5)
-    d = math.log((a_w + al) / (na + alpha0 - a_w - al)) - math.log((b_w + al) / (nh + alpha0 - b_w - al))
-    return d / math.sqrt(1/(a_w + al) + 1/(b_w + al) + 1/(na - a_w) + 1/(nh - b_w))
-top_ai = sorted(((z(w), w) for w in bg if ca.get(w, 0) >= 4), reverse=True)[:22]
-top_hu = sorted(((z(w), w) for w in bg if ch.get(w, 0) >= 4))[:22]
-print("\n== AI DÙNG NHIỀU HƠN (z>0) ==")
-for zv, w in top_ai: print(f"  {w:<16} z={zv:+.1f} (AI {ca.get(w,0)} vs người {ch.get(w,0)})")
-print("== NGƯỜI DÙNG NHIỀU HƠN (z<0) ==")
-for zv, w in top_hu: print(f"  {w:<16} z={zv:+.1f} (người {ch.get(w,0)} vs AI {ca.get(w,0)})")
+    # 3) fightin' words
+    from collections import Counter
+    ch = Counter(w for t in th for w in t); ca = Counter(w for t in ta for w in t)
+    nh, na = sum(ch.values()), sum(ca.values())
+    bg = ch + ca; nb = nh + na; alpha0 = 100.0
+    vocab = {w: alpha0 * c / nb for w, c in bg.items()}
+    def z(w):
+        a_w, b_w = ca.get(w, 0), ch.get(w, 0); al = vocab.get(w, 0.5)
+        d = math.log((a_w + al) / (na + alpha0 - a_w - al)) - math.log((b_w + al) / (nh + alpha0 - b_w - al))
+        return d / math.sqrt(1/(a_w + al) + 1/(b_w + al) + 1/(na - a_w) + 1/(nh - b_w))
+    top_ai = sorted(((z(w), w) for w in bg if ca.get(w, 0) >= 4), reverse=True)[:22]
+    top_hu = sorted(((z(w), w) for w in bg if ch.get(w, 0) >= 4))[:22]
+    print("\n== AI DÙNG NHIỀU HƠN (z>0) ==")
+    for zv, w in top_ai: print(f"  {w:<16} z={zv:+.1f} (AI {ca.get(w,0)} vs người {ch.get(w,0)})")
+    print("== NGƯỜI DÙNG NHIỀU HƠN (z<0) ==")
+    for zv, w in top_hu: print(f"  {w:<16} z={zv:+.1f} (người {ch.get(w,0)} vs AI {ca.get(w,0)})")
+
+if __name__ == "__main__":
+    main()
