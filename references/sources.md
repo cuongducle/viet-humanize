@@ -118,3 +118,12 @@ Vòng dogfood 2 (v1.4.1, trên chính README): scan 0/100 và mật độ Hán V
 - Fightin' words hết nhiễu chủ đề: phía AI toàn âm tiết trừu tượng (nổi, năng, tạo, hội, nhân, sản, cầu), phía người là năm, tháng, số, và (Genk/Kenh14) 'the' — bằng chứng trộn Anh của người thật, ủng hộ B14. Khẩu ý: người dùng tôi, anh, chơi; AI phi-ngôi.
 - Kết quả âm công bố: trợ từ cuối câu KHÔNG tách trên register báo chí giọng trẻ (trung vị 0/0), hạ B8 xuống giả thuyết. Điểm scan 0,62 (trang trọng) / 0,76 (khẩu ý): máy quét bắt được nhiều hơn ở khẩu ý nhưng vẫn không phải detector.
 - Giới hạn: n nhỏ (12 cặp khẩu ý), một mô hình, các chỉ số 1,000 cần corpus lớn hơn trước khi tin là tách tuyệt đối.
+
+## 12. Test model-switch GPT Luna (2026-09-21)
+
+- Model: `gpt-5.6-luna`, xác nhận qua `PI_MODEL`; 20 mẫu trang trọng và 12 mẫu khẩu ý, cùng chủ đề với human v2. Báo cáo: `references/eval-luna.md`, script: `research/eval_luna.py`.
+- Tín hiệu xuyên model: CV độ dài câu (trang trọng AUC 0,965; khẩu ý 1,000), TTR/MATTR AI cao hơn người (trang trọng 0,955/0,931; khẩu ý 1,000/0,854), zlib (0,819/1,000), và cấu trúc đoạn khẩu ý (1,000).
+- Tín hiệu không xuyên model: Hán Việt ở khẩu ý. AI cũ 10,75/1000, Luna 0, người 4,34; hướng Luna ngược lại. Chỉ giữ quy tắc Hán Việt như tín hiệu yếu cho văn trang trọng, không dùng để ép khẩu ngữ.
+- Ngưỡng cũng không xuyên hoàn toàn: ngưỡng CV cũ `≤0,21` bắt 4/12 Luna khẩu ý; nới về `≤0,29` bắt 8/12 với 0 FP người. Không được coi đây là ngưỡng phổ quát.
+- Luna khẩu ý dùng nhiều phó từ cường độ hơn (13,25/1000 so với người 4,22), nhưng n=12 và cùng một model nên chỉ ghi nhận, chưa nâng thành luật.
+- Giới hạn phương pháp: đây là model-switch test chứ chưa phải blind test độc lập; Luna vẫn nhận cùng bối cảnh dự án và người viết không tách khỏi quá trình thiết kế corpus.
