@@ -101,6 +101,8 @@ phát hiện biến thể tổng quát "trong thời đại X ngày nay" mà reg
 'công nghệ/số hóa') bỏ sót: đã vá P0. Verify cũng lộ bug hiển thị chênh lệch
 multiset (trùng lặp số lần): đã vá Counter. Minh chứng cho vai trò của lớp đọc tay.
 
+Vòng dogfood 2 (v1.4.1, trên chính README): scan 0/100 và mật độ Hán Việt 4,5/1000 vẫn còn 3 lỗi chỉ bắt được bằng đọc tay (typo 'hạn hạn chế', 'lẫn' lặp hai lần trong một câu, cụm 'đồng bộ tư tưởng với'). Kết luận lặp lại: điểm 0 không đồng nghĩa 'đã tự nhiên'.
+
 ## 10. Nguồn tầng chọn từ (2026-09-21)
 
 - Georgiou 2025, MDPI Languages 10(5):166: văn AI nhiều từ khó, từ nội dung hơn; văn người nhiều từ chức năng hơn (tiếng Anh). Không tái lập ở tầng âm tiết tiếng Việt trên pilot (AUC 0,43), ghi nhận là kết quả âm.
