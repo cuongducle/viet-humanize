@@ -149,3 +149,13 @@ Trước (đậm đặc kiểu máy): "Đơn vị triển khai giải pháp tố
 Sau: "Đơn vị đưa quy trình mới vào dùng cho chắc, chạy nhanh hơn, và để anh em làm việc đỡ mệt."
 
 Ngoại lệ: văn pháp luật, báo chí chính luận, học thuật vốn giàu Hán Việt; chỉ cảnh báo khi mật độ vượt ngưỡng và register không đòi hỏi. Danh sách từng từ lẻ trong pilot bị nhiễu chủ đề (corpus chưa khớp chủ đề từng bài), nên chỉ mật độ là bằng chứng, không kết luận từng từ riêng lẻ.
+
+### B14. Dịch thuật ngữ Anh phổ biến, P2 [TT]
+
+Người viết công nghệ Việt trộn từ Anh thông dụng tự nhiên (skill, repo, commit, push, pull request, review, feedback, deadline, roadmap, checklist, file, link, email, prompt, token, model, deploy, bug, fix). Văn AI mặc định hay dịch hết ra tiếng Việt, thường thành cụm Hán Việt cứng, vừa vụng vừa đẩy mật độ Hán Việt (chỉ số đã đo AUC 0,72) lên nữa.
+
+Trước (kiểu máy): "Vui lòng gửi yêu cầu kéo đến kho mã nguồn; nhóm sẽ xem xét và hợp nhất thay đổi theo lộ trình."
+
+Sau: "Muốn góp code thì gửi pull request vào repo, team sẽ review rồi merge theo roadmap."
+
+Ngoại lệ: văn bản pháp lý, hành chính, báo in theo quy định dùng thuật ngữ Việt, ghi kèm tiếng Anh lần đầu. Trộn từ Anh cũng phải có chừng mực: chừa lại từ thông dụng thôi, cả câu tiếng Anh hoặc tiếng Việt nhập múi kiểu lai căng lại thành dấu khác.

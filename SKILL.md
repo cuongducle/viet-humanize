@@ -3,7 +3,7 @@ name: viet-humanize
 description: Biên tập văn tiếng Việt bỏ dấu văn AI, dựa trên danh mục dấu hiệu có nguồn trích dẫn (Wikipedia Signs of AI writing, dataset ViDetect, báo chí và giáo viên Việt Nam). Ba chế độ: viết lại, chỉ đánh dấu, sửa tại chỗ file. Kèm máy quét deterministic scripts/vi_scan.py và trình kiểm bảo tồn số liệu. Dùng khi người dùng nói "viết tự nhiên", "không nghe giống AI", "humanize", "bỏ dấu AI", "qua tool dò AI", "kiểm tra văn bản AI", hoặc khi viết/sửa bài tiếng Việt dài.
 license: MIT
 metadata:
-  version: "1.4.0"
+  version: "1.4.1"
 ---
 
 # Viet-humanize: biên tập văn tiếng Việt bỏ dấu AI
@@ -60,6 +60,7 @@ Chi tiết từng dấu với ví dụ trước/sau: references/patterns-full.md
 3. **Đơn vị chuẩn Việt Nam**: dấu phẩy thập phân (9,81 triệu), "tệ" thay ký hiệu tiền Trung Quốc, tên riêng Latin giữ nguyên. Thuật ngữ nền tảng Trung Quốc phải latin hóa và giải thích lần đầu (Xianyu = chợ đồ cũ của Alibaba).
 4. **Sai sót nhẹ có chủ đích**: giọng blog/mạng xã hội cho phép một câu cửa miệng, một cách nói địa phương, một chỗ trùng từ. Văn người không đều tăm tắp. [HL]
 5. **Kết cấu đoạn theo ViDetect**: văn AI tiếng Việt viết đoạn dài, câu ít, phân tích đơn tuyến; người viết nhiều câu hơn, đổi góc nhìn trong đoạn. Khi viết lại: tách đoạn dài, tăng chuyển động. [VD]
+6. **Chọn từ, hai quy tắc đo được**: (a) văn AI dùng động từ Hán Việt trừu tượng đậm gấp 4 lần văn người trong pilot (10,4 so với 2,6 mỗi 1000 âm tiết, AUC 0,72): đổi sang động từ thường khi nghĩa cho phép (triển khai thành làm, hỗ trợ thành giúp, khắc phục thành sửa); lặp tên riêng thay vì xoay vòng "dịch vụ này, nền tảng đó"; đừng né động từ gốc có, được, là, dùng. (b) Từ tiếng Anh thông dụng thì GIỮ NGUYÊN, đừng dịch: skill, repo, commit, push, pull request, review, feedback, deadline, roadmap, checklist, file, folder, link, email, online, chatbot, prompt, token, model, framework, library, update, bug, fix, deploy. Người viết công nghệ Việt trộn tự nhiên; dịch thành "yêu cầu kéo", "kho mã nguồn", "thư điện tử" vừa nghe máy vừa đẩy mật độ Hán Việt lên. Ngoại lệ: văn pháp lý, hành chính, báo in cần thuật ngữ Việt, ghi kèm tiếng Anh lần đầu. [VD][TT]
 
 ## Ví dụ đầy đủ (ngữ cảnh bản địa: bài chuẩn SEO, nơi văn AI dày đặc nhất ở Việt Nam)
 

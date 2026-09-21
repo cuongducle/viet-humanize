@@ -79,6 +79,7 @@ P2_PATTERNS = [
     (r"“|”", "ngoặc kép cong"),
     (r"(?i)^\s*(?:[-*]\s+)?\*\*[^*]{1,40}(\*\*:|:\*\*)", "nhãn in đậm + hai chấm mở câu"),
     (r";", "dấu chấm phẩy (rất hiếm trong văn người Việt)"),
+    (r"(?i)\b(yêu\s+cầu\s+kéo|kho\s+mã\s+nguồn|thư\s+điện\s+tử|mạng\s+toàn\s+cầu)\b", "dịch thuật ngữ Anh phổ biến (giữ nguyên pull request, repo, email, web tự nhiên hơn)"),
     (r"^\s*-{3,}\s*$", "đường kẻ ngang ngăn phần"),
 ]
 
