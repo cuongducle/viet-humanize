@@ -38,6 +38,7 @@ P0_PATTERNS = [
     (r"(?i)(hãy\s+cùng|cùng\s+khám\s+phá|cùng\s+tìm\s+hiểu|hãy\s+khám\s+phá|hãy\s+tìm\s+hiểu)", "mở dàn cảnh: 'hãy cùng...'"),
     (r"(?i)dưới\s+đây\s+là\s+(một\s+)?(số\s+|những\s+)?(điều|cách|lưu\s+ý|dấu\s+hiệu|lý\s+do|nguyên\s+nhân|con\s+số)", "mở dàn cảnh: 'dưới đây là...'"),
     (r"(?i)trong\s+(thế\s+giới|kỷ\s+nguyên|thời\s+đại)\s+(kỹ\s+thuật\s+so|số\s+hóa|công\s+nghệ)[^.!?]{0,60}(ngày\s+nay|hôm\s+nay)", "mở sáo: 'trong thời đại công nghệ ngày nay'"),
+    (r"(?i)trong\s+thời\s+đại\s+[^.,!?…\n]{1,40}\s+ngày\s+nay", "mở sáo tổng quát: 'trong thời đại X ngày nay' (phát hiện khi đọc tay README demo)"),
     (r"(?i)không\s+chỉ\s+[^.;!?]{1,80}?\s(mà\s+còn|mà\s+là|đó\s+là)", "tương phản bơm: 'không chỉ ... mà còn'"),
     (r"(?i)không\s+(đơn\s+thuần|phải\s+chỉ|đơn\s+giản\s+là)[^.;!?]{1,80}?\s(mà\s+(là|còn)|đó\s+là)", "tương phản bơm: 'không đơn thuần ... mà là'"),
     (r"(?i)^[^A-Za-z0-9]*(đó\s+(mới\s+)?là\s+(điều|điều\s+quan\s+trọng|câu\s+trả\s+lời|win))\s*[.!]?\s*$", "câu chốt một dòng nhại lại ý"),
@@ -344,8 +345,10 @@ def verify(before: str, after: str) -> list:
         b = sorted(m.group(0) for m in rx.finditer(before))
         a = sorted(m.group(0) for m in rx.finditer(after))
         if b != a:
-            lost = [x for x in b if x not in a]
-            added = [x for x in a if x not in b]
+            from collections import Counter
+            cb, ca = Counter(b), Counter(a)
+            lost = sorted((cb - ca).elements())
+            added = sorted((ca - cb).elements())
             errors.append({"vung": name, "mat": lost[:5], "them": added[:5]})
     return errors
 

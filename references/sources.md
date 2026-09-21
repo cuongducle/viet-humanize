@@ -92,3 +92,11 @@ Kết quả chính: CV độ dài câu AUC 0,99; TTR/MATTR/entropy dấu câu 0,
 tổng hợp chỉ 0,529; MATTR ngược hướng suy đoán ban đầu. Chi tiết: references/calibration.md.
 Khoảng trống 1 được thu hẹp một phần: ngưỡng nhịp học đã có số liệu riêng cho tiếng Việt
 register trang trọng; register khẩu ngữ/blog vẫn chưa đo được (trợ từ, từ láy đều md=0).
+
+## 9. Demo README bằng chính skill (2026-09-21)
+
+Viết lại README.md của repo theo đúng workflow 5 bước: bản nháp mặc định 37/100,
+bản cuối 0/100, verify bảo toàn pass sau khi nháp bổ sung đủ fact. Bước đọc tay
+phát hiện biến thể tổng quát "trong thời đại X ngày nay" mà regex cũ (chỉ khớp
+'công nghệ/số hóa') bỏ sót: đã vá P0. Verify cũng lộ bug hiển thị chênh lệch
+multiset (trùng lặp số lần): đã vá Counter. Minh chứng cho vai trò của lớp đọc tay.
