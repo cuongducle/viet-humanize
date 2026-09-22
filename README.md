@@ -26,6 +26,17 @@ Không phải cứ đổi vài từ là văn sẽ thành văn người. Skill đ
 
 Bước cuối khá quan trọng. Một bản rewrite nghe tự nhiên hơn nhưng làm mất một con số vẫn là bản rewrite hỏng.
 
+## Câu tự nhiên không chỉ là câu sạch dấu
+
+Vòng đọc tay còn hỏi những câu mà regex không hỏi được:
+
+- Đoạn này đang nói về ai, vật gì hoặc việc gì?
+- Câu mới thêm fact, lý do, ví dụ, ngoại lệ hay hệ quả nào?
+- Câu sau nối với câu trước bằng quan hệ thật, hay chỉ được nối bằng một từ nghe có vẻ mạch lạc?
+- Đoạn cuối có thông tin mới không, hay chỉ nhắc lại câu mở?
+
+Nếu ý chỉ là gọi đúng sự vật, hãy gọi thẳng sự vật. Nếu ý chỉ là xen câu dài với câu ngắn, hãy viết như vậy. Đừng tạo thêm một ẩn dụ biên tập để câu nghe sang hơn.
+
 ## Ba cách dùng
 
 - **Mặc định.** Dán văn cần sửa. Agent viết lại, scan vòng hai rồi chạy verify.
@@ -56,7 +67,7 @@ Pilot gồm 42 mẫu tiếng Việt: 21 mẫu từ Wikipedia và VnExpress, 21 m
 
 Ngưỡng 0,28 bắt được 16/21 mẫu AI và báo nhầm 0/21 mẫu văn người.
 
-Ở tầng chọn từ, văn AI dùng các động từ Hán Việt trừu tượng đậm gấp 4 lần văn người: 10,4 so với 2,6 trên 1000 âm tiết. Vì thế skill không chỉ sửa những câu mở đầu sáo rỗng. Nó còn kéo bài viết về phía những động từ cụ thể hơn, những danh từ có điểm tựa hơn và một nhịp câu bớt đồng phục hơn.
+Ở tầng chọn từ, văn AI dùng các động từ Hán Việt trừu tượng đậm gấp 4 lần văn người: 10,4 so với 2,6 trên 1000 âm tiết. Vì thế skill không chỉ sửa những câu mở đầu sáo rỗng. Nó còn đưa chủ thể, hành động và sự việc cụ thể trở lại câu, rồi để câu dài ngắn theo lượng thông tin thay vì theo một khuôn.
 
 Nhưng đây không phải bộ phát hiện AI. Điểm scan tổng hợp chỉ ngang tung đồng xu trên register bách khoa và báo chí. Máy quét chỉ là một người biên tập vòng đầu. Nó biết gõ cửa, không biết thay bạn phán xét cả bài.
 

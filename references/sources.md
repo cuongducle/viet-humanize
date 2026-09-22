@@ -127,3 +127,23 @@ Vòng dogfood 2 (v1.4.1, trên chính README): scan 0/100 và mật độ Hán V
 - Ngưỡng cũng không xuyên hoàn toàn: ngưỡng CV cũ `≤0,21` bắt 4/12 Luna khẩu ý; nới về `≤0,29` bắt 8/12 với 0 FP người. Không được coi đây là ngưỡng phổ quát.
 - Luna khẩu ý dùng nhiều phó từ cường độ hơn (13,25/1000 so với người 4,22), nhưng n=12 và cùng một model nên chỉ ghi nhận, chưa nâng thành luật.
 - Giới hạn phương pháp: đây là model-switch test chứ chưa phải blind test độc lập; Luna vẫn nhận cùng bối cảnh dự án và người viết không tách khỏi quá trình thiết kế corpus.
+
+## 13. Tầng kết hợp từ và triển khai ý (2026-09-22)
+
+Người dùng đọc bản README mới đã bắt đúng hai lỗi mà scanner không thể bắt: "danh từ có điểm tựa" và "nhịp câu bớt đồng phục" đều là cụm do người biên tập tự chế. Chúng không sai ngữ pháp, nhưng không phải cách nói tự nhiên. Vì vậy bổ sung một lớp kiểm tra thủ công, tách khỏi danh sách từ Hán Việt.
+
+### Nguồn ngôn ngữ học và ngữ liệu
+
+- Cao Xuân Hạo (1998), *Tiếng Việt, văn Việt, người Việt*. Nguồn đã có ở mục 7. Dùng cho nguyên tắc không áp một mô hình chủ ngữ-vị ngữ tiếng Anh vào mọi câu Việt, và để thận trọng khi nói về cấu trúc đề-thuyết.
+- Nguyễn Thị Thu Hiền (2006), "Cấu trúc Đề-thuyết trong phân tích diễn ngôn bình luận tin báo chí tiếng Anh và tiếng Việt", *Tạp chí Khoa học Trường ĐH Sư phạm TP.HCM*, số 7, trang 24. DOI: https://doi.org/10.54607/hcmue.js.0.7.1280. Kết quả tìm kiếm mô tả đề ngữ có vai trò nối với phần trước, duy trì hoặc phát triển chủ đề, tạo tiêu điểm và hướng người đọc. Nguồn hỗ trợ quy tắc B17, không chứng minh đây là dấu AI.
+- Phạm Hoàng và cộng sự (2019), *Constructing two Vietnamese corpora and building a lexical database*. Springer/ACM/JSTOR. Nguồn này xây hai corpus tiếng Việt đương đại và các chỉ số từ vựng, cho thấy việc nói "cụm tự nhiên" cần dựa vào ngữ liệu chứ không chỉ trực giác. Trang tra cứu: https://link.springer.com.
+- Phạm và cộng sự (2008), *Corpora of Vietnamese Texts: Lexical effects of intended audience and age*. *Journal of Psycholinguistic Research*. Kết quả được lập chỉ mục cho thấy tần suất đại từ và từ xưng hô thay đổi theo người đọc, hỗ trợ việc giữ register và xưng hô theo đối tượng thay vì dùng một giọng cho mọi bài.
+- Nguyễn Thị Ngọc Trang và cộng sự (2024), *ViLexNorm: A Lexical Normalization Corpus for Vietnamese Social Media Text*, EACL 2024, https://aclanthology.org/2024.eacl-long.85/. Nguồn này phân biệt dạng viết mạng xã hội và dạng chuẩn hóa, nhắc rằng "tự nhiên" phụ thuộc register; không được sửa khẩu ngữ thành văn in.
+
+### Nguyên tắc rút ra
+
+1. Không tự tạo ẩn dụ để mô tả thao tác biên tập. Nếu ý là gọi đúng sự vật, viết "gọi đúng người, vật hoặc việc".
+2. Không nhầm đa dạng từ với tự nhiên. Lặp lại tên người, sản phẩm hoặc địa điểm khi đó là chủ đề; đừng xoay vòng bằng bốn danh từ trừu tượng chỉ để tránh lặp.
+3. Mỗi câu mới phải thêm fact, nguyên nhân, ví dụ, ngoại lệ hoặc hệ quả. Nếu chỉ nhắc lại câu trước, cắt nó.
+4. Khi chuyển chủ đề, báo bằng một chủ thể hoặc quan hệ thật. Không rải "ngoài ra", "hơn nữa", "do đó", "tóm lại" theo một khuôn cố định.
+5. Quy tắc B16 và B17 hiện là hướng dẫn biên tập [TT]/[NN], chưa phải đặc trưng AI đã được đo. Cần corpus có gắn nhãn kết hợp từ và cấu trúc diễn ngôn trước khi nâng thành tín hiệu định lượng.

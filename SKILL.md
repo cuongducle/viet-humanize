@@ -3,7 +3,7 @@ name: viet-humanize
 description: Biên tập văn tiếng Việt bỏ dấu văn AI, dựa trên danh mục dấu hiệu có nguồn trích dẫn (Wikipedia Signs of AI writing, dataset ViDetect, báo chí và giáo viên Việt Nam). Ba chế độ: viết lại, chỉ đánh dấu, sửa tại chỗ file. Kèm máy quét deterministic scripts/vi_scan.py và trình kiểm bảo tồn số liệu. Dùng khi người dùng nói "viết tự nhiên", "không nghe giống AI", "humanize", "bỏ dấu AI", "qua tool dò AI", "kiểm tra văn bản AI", hoặc khi viết/sửa bài tiếng Việt dài.
 license: MIT
 metadata:
-  version: "1.5.1"
+  version: "1.6.0"
 ---
 
 # Viet-humanize: biên tập văn tiếng Việt bỏ dấu AI
@@ -59,9 +59,11 @@ Chi tiết từng dấu với ví dụ trước/sau: references/patterns-full.md
 2. **Xưng hô nhất quán**: văn AI hay lắc lư giữa "bạn" / "chúng ta" / "mình" trong cùng bài. Chọn một hệ xưng hô theo loại văn và giữ. [TT]
 3. **Đơn vị chuẩn Việt Nam**: dấu phẩy thập phân (9,81 triệu), "tệ" thay ký hiệu tiền Trung Quốc, tên riêng Latin giữ nguyên. Thuật ngữ nền tảng Trung Quốc phải latin hóa và giải thích lần đầu (Xianyu = chợ đồ cũ của Alibaba).
 4. **Sai sót nhẹ có chủ đích**: giọng blog/mạng xã hội cho phép một câu cửa miệng, một cách nói địa phương, một chỗ trùng từ. Văn người không đều tăm tắp. [HL]
-5. **Kết cấu đoạn theo ViDetect**: văn AI tiếng Việt viết đoạn dài, câu ít, phân tích đơn tuyến; người viết nhiều câu hơn, đổi góc nhìn trong đoạn. Khi viết lại: tách đoạn dài, tăng chuyển động. [VD]
+5. **Kết cấu đoạn theo ViDetect**: văn AI tiếng Việt viết đoạn dài, câu ít, phân tích đơn tuyến; người viết nhiều câu hơn, đổi góc nhìn trong đoạn. Khi viết lại: tách đoạn dài, để mỗi câu thêm một thông tin mới hoặc làm rõ quan hệ với câu trước. Đừng viết câu kết chỉ để nhắc lại cả đoạn. [VD]
 6. **Chọn từ, dùng đúng register** (eval v2 và test GPT Luna): (a) ở văn trang trọng, văn AI vẫn dùng động từ Hán Việt trừu tượng đậm hơn văn người (Luna: 6,6 so với 3,1 mỗi 1000 âm tiết; AUC 0,64): đổi sang động từ thường khi nghĩa cho phép (triển khai thành làm, hỗ trợ thành giúp, khắc phục thành sửa); lặp tên riêng thay vì xoay vòng "dịch vụ này, nền tảng đó"; đừng né động từ gốc có, được, là, dùng. Không áp dụng máy móc quy tắc này cho khẩu ngữ: AI cũ có mật độ cao, nhưng Luna lại thấp hơn người (0 so với 4,3). (b') Văn người khẩu ý có ngôi thứ nhất (tôi, anh, mình) và động từ đời thường (chơi, có, còn, được); văn AI phi-ngôi, lơ lửng giữa khái niệm trừu tượng (hội nhập, sản phẩm, nhu cầu). Viết lại register này: thêm tiếng nói ngôi thứ nhất, ghim cụ thể. [HL, cần thêm model]
 (b) Từ tiếng Anh thông dụng thì GIỮ NGUYÊN, đừng dịch: skill, repo, commit, push, pull request, review, feedback, deadline, roadmap, checklist, file, folder, link, email, online, chatbot, prompt, token, model, framework, library, update, bug, fix, deploy. Người viết công nghệ Việt trộn tự nhiên; dịch thành "yêu cầu kéo", "kho mã nguồn", "thư điện tử" vừa nghe máy vừa đẩy mật độ Hán Việt lên. Ngoại lệ: văn pháp lý, hành chính, báo in cần thuật ngữ Việt, ghi kèm tiếng Anh lần đầu. [VD][TT]
+7. **Không tự chế ẩn dụ biên tập**: đừng viết "danh từ có điểm tựa", "câu có chuyển động" hay "nhịp câu bớt đồng phục" nếu ý thật chỉ là gọi đúng người, vật, việc và xen câu dài với câu ngắn. Ưu tiên câu literal, có động từ và có chủ thể. Một ẩn dụ chỉ nên giữ khi đó là cách nói quen thuộc của register hoặc nằm trong giọng riêng của người viết. [TT]
+8. **Triển khai ý theo sự việc, không theo bộ khung**: câu đầu cho biết đang nói về ai, vật gì, thời điểm nào hoặc vấn đề nào. Câu sau thêm một fact, lý do, ví dụ hoặc ngoại lệ. Khi đổi chủ thể, gọi tên lại; đừng xoay vòng danh từ trừu tượng để tránh lặp. Chỉ dùng "ngoài ra", "do đó", "tóm lại" khi quan hệ giữa hai câu thật sự cần nó. Cuối đoạn nên thêm hệ quả, giới hạn hoặc bước tiếp theo, không nhắc lại nguyên câu đầu. Đây là quy tắc biên tập theo cấu trúc đề thuyết và mạch lạc tiếng Việt, không phải dấu phát hiện AI. [NN][TT]
 
 ## Ví dụ đầy đủ (ngữ cảnh bản địa: bài chuẩn SEO, nơi văn AI dày đặc nhất ở Việt Nam)
 

@@ -64,3 +64,22 @@ Nghiêm ngặt nhất về mặt bằng chứng:
 2. Gán nhãn nguồn đúng: chỉ [W]/[VD] khi trích được đúng nguồn; không gán nhãn [TT] cho ý kiến cá nhân.
 3. Chỉ lên P0 khi dấu đó bền qua nhiều bản mô hình hoặc có nguồn trực tiếp.
 4. Nếu dấu bắt được cả văn người viết cẩn thận thì hạ xuống P2 và bắt buộc "cần dấu bạn cùng đoạn".
+
+## 5. Vòng research mới: từ chọn từ sang mạch ý (22/09/2026)
+
+Phản hồi thực tế trên README cho thấy scanner có thể đạt 0 nhưng câu vẫn gượng. Cụm "danh từ có điểm tựa" là ví dụ rõ: từng từ đều hợp lệ, cả câu vẫn không phải kết hợp tự nhiên. Vì vậy không thêm một danh sách từ mới một cách vội vàng. Vòng này tách hai tầng:
+
+- **Kết hợp từ:** ưu tiên cụm đã có trong register tương ứng. Nếu ý có thể nói thẳng bằng chủ thể, động từ và vật thể, dùng cách đó. Không tự phát minh ẩn dụ để mô tả thao tác biên tập.
+- **Mạch ý:** kiểm tra quan hệ giữa các câu. Câu sau phải thêm thông tin, giải thích, ví dụ, ngoại lệ hoặc hệ quả. Khi đổi chủ thể, gọi tên lại. Không dùng liên từ theo dây chuyền chỉ để tạo vẻ mạch lạc.
+
+Nền ngôn ngữ học là hướng tiếp cận đề-thuyết của Cao Xuân Hạo và bài của Nguyễn Thị Thu Hiền về đề ngữ trong diễn ngôn bình luận tin báo chí Việt. Nền ngữ liệu là các công trình xây corpus tiếng Việt của Phạm Hoàng và cộng sự, cùng corpus chuẩn hóa mạng xã hội ViLexNorm. Các nguồn này hỗ trợ cách nghiên cứu và sự khác nhau theo register, không chứng minh B16/B17 là dấu AI.
+
+### Checklist đọc tay mới
+
+1. Người, vật hoặc việc chính của đoạn là gì? Có gọi thẳng ra không?
+2. Câu này thêm thông tin gì so với câu trước?
+3. Quan hệ giữa hai câu là tiếp tục, nguyên nhân, đối lập, ví dụ hay hệ quả? Có cần liên từ không?
+4. Có cụm ẩn dụ nào chỉ để làm câu nghe sang hơn không? Nếu bỏ ẩn dụ mà ý vẫn đủ, bỏ.
+5. Đoạn cuối có thêm giới hạn hoặc hệ quả thật không, hay chỉ nhắc lại câu mở?
+
+Đây là lớp đọc hiểu để sửa văn gượng, không phải bộ phát hiện AI. Một câu có thể rất tự nhiên nhưng vẫn do AI viết, và một câu người viết thật có thể vẫn cầu kỳ.

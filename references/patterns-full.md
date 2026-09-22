@@ -1,4 +1,4 @@
-# Danh mục dấu hiệu đầy đủ (30 dấu, trước/sau, nhãn nguồn)
+# Danh mục dấu hiệu đầy đủ (32 dấu, trước/sau, nhãn nguồn)
 
 Lớp A = dấu phổ quát (khái niệm dịch từ Wikipedia Signs of AI writing, ví dụ viết lại cho tiếng Việt).
 Lớp B = dấu riêng của tiếng Việt (nguồn ghi từng dấu).
@@ -167,3 +167,28 @@ Eval v2 đo trợ từ cuối câu trên 12 cặp Góc nhìn/Genk/Kenh14: trung 
 ### B15. Cấu trúc đoạn khẩu ý (đo được ở v2), P1 [VD]
 
 Eval v2 (12 cặp): câu trung bình mỗi đoạn người 1,7 so với AI 7,0 (AUC 1,000, corpus nhỏ nên coi là ước lượng mạnh chứ không tuyệt đối). Văn người viết báo giọng trẻ tách đoạn rất ngắn, gần như mỗi ý một đoạn. AI giữ thói quen gộp 5-7 câu một đoạn dù đổi giọng. Khi viết lại register này: tách đoạn mạnh tay.
+
+### B16. Cụm ẩn dụ biên tập tự chế, P1 [TT]
+
+Có những câu không sai nghĩa nhưng người Việt ít nói vậy. Chúng thường lấy một từ trừu tượng rồi ghép với danh từ bằng một ẩn dụ chưa thành cách nói: "danh từ có điểm tựa", "câu có chuyển động", "nhịp câu bớt đồng phục". Đây không phải lệnh cấm ẩn dụ. Chỉ cần hỏi: người viết đang nói cụ thể về ai, vật gì, việc gì? Nếu có, gọi thẳng ra.
+
+- Trước: "Chọn từ để danh từ có điểm tựa hơn và nhịp câu bớt đồng phục."
+- Sau: "Gọi đúng người, vật hoặc việc đang được nói tới, rồi xen câu dài với câu ngắn."
+
+Không đưa một cụm vào danh mục chỉ vì nghe hơi lạ. Kiểm tra bằng từ điển, ngữ liệu hoặc ít nhất vài văn bản cùng register. Đây là quy tắc tránh câu gượng, chưa phải thống kê AI.
+
+### B17. Bộ khung triển khai ý, P1 [NN][TT]
+
+Văn AI hay đi theo một dàn ý phẳng: câu mở nói điều quan trọng, các câu sau lần lượt "trước hết", "bên cạnh đó", "hơn nữa", rồi câu cuối nhắc lại kết luận. Vấn đề không nằm ở từng từ nối, mà ở chỗ câu sau không thêm thông tin mới hoặc không làm rõ quan hệ với câu trước.
+
+Khi viết lại, dùng chuỗi đơn giản hơn:
+
+1. Nêu người, vật, sự việc hoặc thời điểm đang nói tới.
+2. Thêm fact, lý do, ví dụ hoặc ngoại lệ.
+3. Nêu hệ quả hay giới hạn nếu thật sự có.
+4. Khi đổi chủ thể, gọi tên lại thay vì xoay vòng bốn danh từ trừu tượng.
+
+- Trước: "Quản lý tài chính đóng vai trò quan trọng. Trước hết, cần lập ngân sách. Bên cạnh đó, cần theo dõi chi tiêu. Nhìn chung, đây là giải pháp hiệu quả."
+- Sau: "Tháng này tiền thường đi vào ba khoản: tiền nhà, ăn uống và đi lại. Ghi lại trong 30 ngày sẽ cho thấy khoản nào đang phình ra. Nếu tiền nhà đã chiếm gần hết thu nhập, không thể ép mình theo một tỷ lệ tiết kiệm có sẵn."
+
+Đây là hướng dẫn về mạch lạc và cấu trúc đề thuyết trong tiếng Việt, không phải dấu hiệu để kết luận một văn bản do AI viết.
