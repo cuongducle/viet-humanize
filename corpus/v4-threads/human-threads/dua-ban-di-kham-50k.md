@@ -1,0 +1,1 @@
+Mình được nghỉ 1 ngày trong tuần. Mình muốn mở dịch vụ "đưa bạn đi khám" với chi phí chỉ 50k/h dành cho những bạn ko muốn đi khám bệnh 1 mình và bạn bè người thân đều bận hoặc ko muốn nhờ vả. Liệu có ai cần không ạ

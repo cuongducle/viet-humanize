@@ -1,0 +1,1 @@
+Bh 1 lớp 40-50 đứa, 1 tiết dạy có 40', mỗi cháu tính ra được cô chăm cùng lắm là 1' 🙄. Thế k đi học thêm thì thề luôn đứa nào dốt sẽ mãi dốt. Cứ bảo là nâng cao tinh thần tự học, cơ mà người lớn bảo tự học còn k học được nói gì trẻ con. Tôi đi dạy 5 năm nay hàng nghìn hsinh c3 và svien ĐH nói thật k được quá 10% là "tự có ý thức học".

@@ -74,4 +74,4 @@ Ngoài ra OpenSubtitles tiếng Việt cho register hội thoại phim, tham kh�
 
 ## Trạng thái
 
-Hai vòng đã chạy ngày 2026-09-25: 44 bài, 7 bộ trả lời, 18 cặp AI. Kết quả và giới hạn nằm trong `references/eval-threads.md`, tóm tắt ở mục 15 của `sources.md`. Việc còn treo: lấy thêm khoảng 10 bộ trả lời nữa, ưu tiên chủ đề tâm sự, để thu hẹp khoảng dao động mật độ trợ từ của B8.
+Ba vòng đã chạy ngày 2026-09-25: 77 bài, 12 bộ trả lời, 30 cặp AI, phủ 19 nhóm chủ đề (việc làm, lương, sếp, trọ, chia tay, học lại, dọn nhà, cuối tuần, nấu ăn, khám bệnh, mẹ chồng, hôn nhân, dạy con, gym, thú cưng, xe máy, cà phê, hàng xóm, tiết kiệm). Kết quả và giới hạn nằm trong `references/eval-threads.md`, tóm tắt ở mục 15 của `sources.md`. Việc còn treo: thêm mẫu replies ở các chủ đề trung tính (gợi ý, hỏi kinh nghiệm) hiện thưa trợ từ.

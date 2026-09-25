@@ -123,7 +123,7 @@ Nguồn, cách lấy mẫu và các kết quả chi tiết nằm trong:
 
 Skill không đảm bảo vượt qua một detector cụ thể. Nó không biến văn bản thành văn người bằng cách thêm lỗi chính tả hoặc tiếng lóng, cũng không tự bịa số liệu, nguồn, tên riêng hay trải nghiệm cá nhân. Một danh sách từ duy nhất cũng không thể áp dụng cho mọi kiểu văn.
 
-Từ tháng 9/2026 corpus có thêm 44 bài Threads Việt Nam và 7 bộ trả lời. Trợ từ cuối câu xuất hiện ở 5/7 bộ trả lời và 13/44 bài dài phía người (tối đa 83 lần mỗi 1000 âm tiết) so với 1/18 bài AI, nên tín hiệu này chỉ dùng làm chỉ báo cho văn ngắn kiểu chat. Từ láy vẫn là gợi ý. Người viết vẫn cần đọc lại bản cuối và tự kiểm tra sự thật.
+Từ tháng 9/2026 corpus có thêm 77 bài Threads Việt Nam và 12 bộ trả lời phủ 19 nhóm chủ đề đời sống. Trợ từ cuối câu xuất hiện ở 7/12 bộ trả lời và 27/77 bài dài phía người so với 3/30 bài AI, nên tín hiệu này chỉ dùng làm chỉ báo cho văn ngắn kiểu chat. Từ láy vẫn là gợi ý. Người viết vẫn cần đọc lại bản cuối và tự kiểm tra sự thật.
 
 ## Cấu trúc thư mục
 

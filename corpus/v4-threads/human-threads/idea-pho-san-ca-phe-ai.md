@@ -1,0 +1,1 @@
+Vừa lọ ra được cái idea bùng nổ phá sản vcl: budget 3 tỷ +1b5 đầu tư 1 con AI local +1b5 mở quán cà phê Mỗi cốc từ 80k-100k kèm thêm 1 cái API Key giới hạn token nữa 🐸. Dcm thất nghiệp thì clj cũng nghĩ ra

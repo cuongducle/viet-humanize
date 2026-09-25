@@ -1,0 +1,1 @@
+mọi người ơi, cho mình xin gợi ý một số nơi khám bệnh tâm lý ở HN với ạ. trước mình từng khám ở bv đại học y HN thấy cũng ổn ổn nhưng mà mình vẫn muốn thử chỗ khác để khám thêm về các vấn đề khác (vì hình như đh y chỉ diagnose bệnh tr4m c4m thui)

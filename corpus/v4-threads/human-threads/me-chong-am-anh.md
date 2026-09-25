@@ -1,0 +1,1 @@
+Tại sao đa phần mẹ chồng luôn là nỗi ám ảnh của các nàng dâu vậy nhỉ. Công bằng mà nói mẹ chồng mình ko phải ng xấu, mình cũng ko phải ng xấu. Nhưng cảm giác chẳng bao giờ có thể hoà hợp và cảm thông nhau.

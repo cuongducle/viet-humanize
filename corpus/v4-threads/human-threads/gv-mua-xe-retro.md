@@ -1,0 +1,1 @@
+Tui tính mua xe máy, ae rcm cho tui con nào bền với cả ít hao xăng, đi phượt đường dài lẫn đi phố được, kiểu dáng classic retro tí, nma đừng hầm hố quá tại tui còn mang đi làm (tui là gv 🤡). Cin cảm ưn 🫶🏻

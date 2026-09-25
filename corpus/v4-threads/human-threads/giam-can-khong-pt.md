@@ -1,0 +1,1 @@
+Mọi người ơi, em muốn bắt đầu hành trình giảm cân và đi gym nhưng ko đủ kinh phí để thuê PT 🥹 mọi người có thể cho em xin 1 vài bài tập cho người mới bắt đầu được ko ạ? Do lần đầu đi nên em cũng ngại và hơi mắc cỡ hic, có cần thiết là phải mặc quần áo gym để tập ko ạ?

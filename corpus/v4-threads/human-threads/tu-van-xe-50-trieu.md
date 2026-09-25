@@ -1,0 +1,1 @@
+Dear cộng đồng Threads city Em là Nam và đang có ý định mua xe máy, nhờ mn tư vấn giúp em với ạ. Tiêu chí: - Xe ga, bền, không quá hầm hố. - Budget của em là 50m đổ lại 💰 - Em kh quá cao (m65) nên cũng ngại xe cao ạ p/s: em có hơi nghiêng về Ab với nvx, cá nhân em thích dáng AB hơn mà thấy mn bảo AB đời mới xấu với ảo giá , mà NVX e thấy lại quá to 😵😵😵😵

@@ -1,0 +1,1 @@
+Ai giúp mình với Mẹ mình không ủng hộ nuôi mèo, 2 mẹ con chiến tranh mấy năm rồi. Có lần còn cho người xông qua nhà mình bắt mèo nữa. Các con của mình là mèo ta đã trưởng thành. Đứa nào cũng mập và xinh. Có ai muốn nhận nuôi không? Inbox cho mình mình gửi hình nha. Mong các bạn giúp mình mỗi người một tay để các con có nơi ở mới an toàn hơn.
