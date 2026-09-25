@@ -58,6 +58,22 @@ Hai điều cần lưu ý khi dùng:
 
 Ngoài ra OpenSubtitles tiếng Việt cho register hội thoại phim, tham khảo được trợ từ nhưng là lời thoại dựng, không phải văn viết thật, nên chỉ coi là tài liệu phụ.
 
+## Vệ sinh cửa sổ Chrome sau mỗi đợt thu
+
+Mỗi session bsk mở một agent window riêng. Sau `session stop`, tab vẫn ở lại trong cửa sổ đó. Thu vài đợt liên tiếp, các tab Threads (ứng dụng React cuộn vô tận) chất đống làm Chrome quá tải: extension đứt kết nối lặp đi lặp lại, mọi lệnh navigate/observe đều timeout ở tầng RPC. Ghi từ sự cố ngày 2026-09-25: sau ba đợt thu, Chrome disconnect mỗi 1-2 phút một lần (generation 1 tới 10 trong log).
+
+Nhận biết: `bsk logs | tail` thấy dòng "browser disconnected" và "browser connected" xen kẽ liên tục là lỗi này, không phải do Threads hay sai lệnh gọi. Session vẫn start được, navigate báo url OK, chỉ observe là chết.
+
+Cách xử lý, vì bsk không có lệnh đóng cửa sổ nên dùng computer-use:
+
+1. Stop mọi session bsk trước, vì đóng cửa sổ sẽ kill session tương ứng (log ghi "session removed: user closed Agent Window").
+2. Liệt kê cửa sổ: `orca computer list-windows --app "Google Chrome" --json`. Cửa do agent mở thường có tiêu đề là trang Threads hoặc để trống, 0 phần tử giao diện khi soi `get-app-state`.
+3. Đóng từng cửa: `orca computer hotkey --app "Google Chrome" --window-id <id> --key CmdOrCtrl+W --restore-window`. Cửa trống không focus nổi được thì bỏ qua, vô hại.
+4. Chỉ đóng cửa chắc chắn do agent mở. Cửa người dùng đang dùng (tiêu đề rõ, có nội dung như trang đăng nhập) thì không đụng tới. Soi `get-app-state` nếu nghi ngờ.
+5. Nếu dọn rồi vẫn đứt: khởi động lại Chrome hoàn toàn rồi mới thu tiếp. Đừng lặp lại observe hơn hai lần trên cùng một lỗi.
+
+Phòng ngừa: xong mỗi đợt, stop session rồi đóng luôn agent window đó, không để tab Threads tích lũy qua các đợt.
+
 ## Quy trình khi bắt đầu thu corpus v4-threads
 
 1. Dùng bsk lấy 30-60 bài Threads Việt Nam dài (mỗi bài từ 60 từ trở lên) cùng 2-3 reply mỗi bài, rải trên ít nhất 5 chủ đề khác nhau.
