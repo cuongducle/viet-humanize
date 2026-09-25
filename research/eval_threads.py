@@ -59,7 +59,7 @@ def main():
         sv = sorted(v)
         out.append(f"| {name} | {sum(1 for x in v if x > 0)}/{len(v)} | {sv[len(sv)//2]:.1f} | {max(v):.1f} |\n")
 
-    out.append("\nFightin' words (12 cặp khớp chủ đề):\n")
+    out.append(f"\nFightin' words ({len(A)} cặp khớp chủ đề):\n")
     ch = Counter(w for t in th for w in t); ca = Counter(w for t in ta for w in t)
     import math
     nh, na = sum(ch.values()), sum(ca.values())

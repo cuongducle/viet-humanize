@@ -1,0 +1,1 @@
+Có ai 29 tuổi học lại cao đẳng, đại học do trước bỏ giữa chừng không? Mình trước bỏ đại học ngành quản trị kinh doanh xong đi học lại cao đẳng ngành kinh doanh thương mại, vẫn chưa biết sau này làm gì

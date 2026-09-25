@@ -74,4 +74,4 @@ Ngoài ra OpenSubtitles tiếng Việt cho register hội thoại phim, tham kh�
 
 ## Trạng thái
 
-Vòng pilot đã chạy ngày 2026-09-25: 24 bài, 2 bộ trả lời, 12 cặp AI. Kết quả và giới hạn nằm trong `references/eval-threads.md`, tóm tắt ở mục 15 của `sources.md`. Việc còn treo: lấy thêm khoảng 10 bộ trả lời để chốt số cho B8 trên tầng ngắn.
+Hai vòng đã chạy ngày 2026-09-25: 44 bài, 7 bộ trả lời, 18 cặp AI. Kết quả và giới hạn nằm trong `references/eval-threads.md`, tóm tắt ở mục 15 của `sources.md`. Việc còn treo: lấy thêm khoảng 10 bộ trả lời nữa, ưu tiên chủ đề tâm sự, để thu hẹp khoảng dao động mật độ trợ từ của B8.

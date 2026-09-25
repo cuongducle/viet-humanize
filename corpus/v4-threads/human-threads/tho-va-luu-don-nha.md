@@ -1,0 +1,1 @@
+Hi tp sợi chỉ E tên là H., 2k5 H. có mong ước đi thi lại đại học nên b í đang làm dịch vụ dọn dẹp nhà H. có nhận dọn: - Nhà có chó mèo - Nhà của những b trầm cảm, hướng hikikomori - Nhà của người bận rộn - Hoặc đơn giản chỉ là lười dọn... Mong được giúp mng có chiếc nhà thơm tho sạch sẽ hơn 🫶

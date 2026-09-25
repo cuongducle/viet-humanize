@@ -1,0 +1,1 @@
+26 tuổi nghỉ việc, bắt đầu với một ngành mới, học lại từ đầu, bắt đầu từ một vị trí thấp, lương thấp thì có gọi là thất bại không mọi người. Anh chị nào có kinh nghiệm cho em xin lời khuyên được không ạ!

@@ -1,0 +1,5 @@
+Mình với ny quen nhau được hơn 1 năm, mình đã tưởng bọn mình rất hợp nhau cho đến chuyện ngày hôm nay. Tối nay mình và a đi date, anh kể cho mình nghe chuyện bạn anh ngoại tình và vừa chia tay với bạn gái hiện tại. Mình hỏi thế anh với bạn anh bây giờ thế nào?, anh trả lời tỉnh bơ :" Thì anh với nó vẫn bình thường, thằng đấy gái gú như cơm bữa ấy mà." Mình nghe xong thì cũng đơ ra một lúc, suốt buổi hẹn đấy mình trầm hẳn xuống. Ngồi thêm một lúc thì mình bảo mệt và mình tự gọi xe về.
+
+Ngay tối hôm đấy mình nhắn chia tay với anh ( mình không nói trực tiếp vì biết mình sẽ khóc và không thể nói gãy gọn hết câu ). Mình nói thẳng:" Em sẽ không ở bên một người mà thấy người khác ngoại tình, gái gú là chuyện bình thường, và người đó thậm chí là người bạn thân của anh." ( Mình nhắn nhiều nữa cơ nma tóm gọn lại lý do chính ). Anh nhắn xin lỗi, mong mình cho anh thêm cơ hội nhưng mình nói không. Mình cũng cảm ơn anh vì đã ở bên mình, chúc anh tìm được người phù hợp hơn.
+
+Cảm ơn mọi người đã đọc. Hôm nay mình thấy buồn nên dùng acc clone để viết mấy dòng tâm sự. Mọi người hoan hỉ nhé❤️

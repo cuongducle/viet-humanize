@@ -1,0 +1,1 @@
+Thề luôn, mới dọn trọ xong mới thấy đó giờ mình ngu dại dã man 🤦‍♀️ Mấy đợt trước cứ đè mấy bên chuyển nhà trọn gói mà book, lần nào cũng bay đứt 1,5 - 2 củ. Đợt này khbiet sao tự mua mấy cái thùng carton về nhét đồ vô xong lên Lalamove book chiếc xe Van + chọn dịch vụ bác tài bốc xếp tận nơi, tốn có mấy trăm, lại dư ra cả củ ăn lẩu kk.

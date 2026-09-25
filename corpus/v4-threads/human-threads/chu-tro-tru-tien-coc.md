@@ -1,0 +1,1 @@
+Dọn nhà chuyển nhà đi đúng hợp đồng, dọn dẹp vệ sinh sạch sẽ thơm tho, nhưng chủ trọ soi đến từng kẽ tóc để trừ tiền cọc? Để lại đúng 1 quyển lịch mới nguyên mà nói PHẢI THUÊ NGƯỜI ĐỂ VỨT ĐI. Đòi trừ tiền bằng được thì thôi.
