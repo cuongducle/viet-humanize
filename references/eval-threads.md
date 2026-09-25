@@ -53,3 +53,12 @@ Người lệch âm: mình (-7.3), thì (-5.1), mà (-4.5), mẹ (-4.1), đi (-3
 - Replies 12 bộ, khoảng 2.400 từ. Mật độ trợ từ dao động rộng theo chủ đề; khoảng tin cậy cho B8 vẫn cần thêm mẫu ở các chủ đề trung tính (gợi ý, hỏi xin kinh nghiệm) hiện thưa trợ từ.
 - Vài bài trong corpus có thể do AI sinh để kéo tương tác; đã loại listicle và quảng cáo nhưng không loại được bài kể chuyện do AI viết khéo.
 - Điểm scan tổng hợp 0,661: máy quét chỉ là công cụ biên tập bề mặt, đúng chủ trương của skill.
+
+## Đối chiếu độc lập bằng ViHSD (2026-09-25, đợt 4)
+
+Chrome bất ổn nên đợt 4 không lấy thêm replies Threads được; dùng dataset ViHSD (24.048 comment Facebook/YouTube có dán nhãn) để đo lại tầng trả lời ngắn trên một nền tảng khác. Chỉ lấy số tổng hợp, không đưa văn bản vào repo.
+
+- Mẫu: 16.319 comment nhãn CLEAN, mỗi comment từ 4 âm tiết trở lên.
+- Có trợ từ cuối câu: 8,0% số comment. Trung vị toàn bộ 0/1000; nhóm có trợ từ đạt trung vị 90,9/1000, tối đa 250. Phân vị 95 của toàn bộ là 76,9/1000.
+- Đối chiếu Threads: replies theo bộ có tỉ lệ có-trợ-từ cao hơn (7/12) vì mỗi bộ gộp nhiều reply; nhưng bức tranh khớp: mật độ dao động rất rộng, hiện tượng có/không mới là tín hiệu tách được.
+- Kết luận B8 giữ nguyên và có bằng chứng độc lập ngoài Threads: dùng làm chỉ báo cho register chat, không dùng làm thước đo đều và không làm dấu hiệu quyết định.

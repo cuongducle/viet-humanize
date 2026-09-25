@@ -74,4 +74,6 @@ Ngoài ra OpenSubtitles tiếng Việt cho register hội thoại phim, tham kh�
 
 ## Trạng thái
 
-Ba vòng đã chạy ngày 2026-09-25: 77 bài, 12 bộ trả lời, 30 cặp AI, phủ 19 nhóm chủ đề (việc làm, lương, sếp, trọ, chia tay, học lại, dọn nhà, cuối tuần, nấu ăn, khám bệnh, mẹ chồng, hôn nhân, dạy con, gym, thú cưng, xe máy, cà phê, hàng xóm, tiết kiệm). Kết quả và giới hạn nằm trong `references/eval-threads.md`, tóm tắt ở mục 15 của `sources.md`. Việc còn treo: thêm mẫu replies ở các chủ đề trung tính (gợi ý, hỏi kinh nghiệm) hiện thưa trợ từ.
+Ba vòng đã chạy ngày 2026-09-25: 77 bài, 12 bộ trả lời, 30 cặp AI, phủ 19 nhóm chủ đề (việc làm, lương, sếp, trọ, chia tay, học lại, dọn nhà, cuối tuần, nấu ăn, khám bệnh, mẹ chồng, hôn nhân, dạy con, gym, thú cưng, xe máy, cà phê, hàng xóm, tiết kiệm). Kết quả và giới hạn nằm trong `references/eval-threads.md`, tóm tắt ở mục 15 của `sources.md`.
+
+Đợt 4 (replies chủ đề trung tính) dở vì Chrome đứt kết nối extension liên tục; đã lấy ViHSD đo đối chiếu thay thế (8,0% comment có trợ từ, nhóm có đạt 90,9/1000). Khi Chrome ổn, chạy lại bằng cùng quy trình bsk.

@@ -164,7 +164,9 @@ Ngoại lệ: văn bản pháp lý, hành chính, báo in theo quy định dùng
 
 Eval v2 đo trợ từ cuối câu trên 12 cặp Góc nhìn/Genk/Kenh14: trung vị cả hai bên đều 0 (AUC 0,65 lệch vì vài bài). Kết luận: báo chí 'giọng trẻ' của người thật vẫn ít trợ từ cuối câu.
 
-Eval v4-threads (77 bài Threads + 12 bộ trả lời + 30 cặp AI cùng chủ đề): bài dài của người 27/77 file có trợ từ (35%, tối đa 83,3/1000, trung vị 0), AI chỉ 3/30 (10%, tối đa 8,4/1000); 7/12 bộ trả lời có, trung vị 3,7, tối đa 57,1/1000 tùy chủ đề. Kết luận: B8 là tín hiệu đã đo cho register chat; hiện tượng có/không tách rõ hơn mật độ. Dùng làm chỉ báo cho văn trả lời ngắn, không dùng làm dấu hiệu quyết định và không áp cho văn dài.
+Eval v4-threads (77 bài Threads + 12 bộ trả lời + 30 cặp AI cùng chủ đề): bài dài của người 27/77 file có trợ từ (35%, tối đa 83,3/1000, trung vị 0), AI chỉ 3/30 (10%, tối đa 8,4/1000); 7/12 bộ trả lời có, trung vị 3,7, tối đa 57,1/1000 tùy chủ đề.
+
+Đối chiếu độc lập bằng ViHSD (16.319 comment Facebook/YouTube nhãn CLEAN): 8,0% comment có trợ từ, trung vị toàn bộ 0/1000, nhóm có trợ từ trung vị 90,9/1000. Kết luận B8 được củng cố ngoài nền tảng Threads: là tín hiệu hiện tượng có/không của register chat, không phải thước đo đều. Dùng làm chỉ báo cho văn trả lời ngắn, không dùng làm dấu hiệu quyết định và không áp cho văn dài.
 
 ### B15. Cấu trúc đoạn khẩu ý (đo được ở v2), P1 [VD]
 
