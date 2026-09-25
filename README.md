@@ -123,7 +123,7 @@ Nguồn, cách lấy mẫu và các kết quả chi tiết nằm trong:
 
 Skill không đảm bảo vượt qua một detector cụ thể. Nó không biến văn bản thành văn người bằng cách thêm lỗi chính tả hoặc tiếng lóng, cũng không tự bịa số liệu, nguồn, tên riêng hay trải nghiệm cá nhân. Một danh sách từ duy nhất cũng không thể áp dụng cho mọi kiểu văn.
 
-Văn khẩu ngữ vẫn là khoảng trống lớn của corpus hiện tại. Các tín hiệu như trợ từ cuối câu và từ láy mới chỉ nên dùng như gợi ý. Người viết vẫn cần đọc lại bản cuối và tự kiểm tra sự thật.
+Từ tháng 9/2026 corpus có thêm 24 bài Threads Việt Nam và 2 bộ trả lời. Trợ từ cuối câu tách rõ ở tầng trả lời ngắn (người 57 lần mỗi 1000 âm tiết, AI 0) nhưng không ở bài kể chuyện dài, nên tín hiệu này chỉ dùng cho văn ngắn kiểu chat. Từ láy vẫn là gợi ý. Người viết vẫn cần đọc lại bản cuối và tự kiểm tra sự thật.
 
 ## Cấu trúc thư mục
 

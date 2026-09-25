@@ -1,0 +1,1 @@
+Mấy bà bảo thất nghiệp 6 tháng hay 10 thật là mí bà có đi làm không? Ý là có đi làm nhưng không đi làm văn phòng nên gọi là thất nghiệp đúng không? Ý là nếu không đi làm thực sự thì lấy tiền đâu mà sống với làm gì trong lúc không làm việc nhỉ? Mình thắc mắc thật đó. Tại nếu mình không làm gì thì mình sẽ ko có tiền í

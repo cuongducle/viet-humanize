@@ -1,0 +1,1 @@
+Sao mng cứ kêu trọ đắt 4-5tr phòng xấu mà tui pass phòng tầng 6 view đẹp có 3,5tr nhà có thang máy, máy giặt, chỗ để xe free, trước mặt có công viên hồ nước, chỗ đánh cầu lông. Trong phòng có vệ sinh khép kín, bàn bếp, hành lang phơi quần áo, 2 cửa sổ thoáng trong phòng mà khum ai thuê ta ??? 😢

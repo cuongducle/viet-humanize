@@ -1,0 +1,1 @@
+=)) Thật sự mình rất tò mò các bạn 2k3 ra trường làm cái gì mà lương 30 triệu được hay v? Mình ra trường làm lương được 12tr đã mừng rớt nước mắt rồi mà đi ra ngoài cứ nghe các bạn được lương 30tr mà thấy áp lực

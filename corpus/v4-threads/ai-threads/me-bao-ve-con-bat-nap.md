@@ -1,0 +1,5 @@
+Chưa bao giờ tôi viết bài trên mạng xã hội, nhưng câu chuyện vừa xảy ra với con gái tôi khiến tôi cảm thấy cần chia sẻ để các bậc phụ huynh tham khảo. Con gái tôi năm nay học lớp 11. Vài ngày trước, cháu trở về nhà trong tình trạng buồn bã và khóc thút thít. Ban đầu, cháu chỉ nói rằng mình khóc vì xem phim xúc động. Tuy nhiên, với tư cách là người mẹ, tôi nhận thấy có điều gì đó bất thường.
+
+Sau khi được động viên, con gái tôi chia sẻ rằng một bạn học đã lấy hình ảnh của cháu đăng lên mạng xã hội kèm theo thông tin cá nhân mà không được phép. Điều này khiến cháu cảm thấy lo lắng và bất an. Tôi đã liên hệ với bạn học kia để yêu cầu gỡ bỏ nội dung, đồng thời trao đổi với giáo viên chủ nhiệm để đảm bảo vụ việc được xử lý đúng cách.
+
+Qua câu chuyện này, tôi nhận thấy sự đồng hành của gia đình đóng vai trò quan trọng. Cha mẹ nên dành thời gian trò chuyện với con mỗi ngày để kịp thời nhận ra những dấu hiệu bất thường. Hy vọng chia sẻ này sẽ hữu ích cho các gia đình đang gặp tình huống tương tự.

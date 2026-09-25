@@ -160,9 +160,11 @@ Sau: "Muốn góp code thì gửi pull request vào repo, team sẽ review rồi
 
 Ngoại lệ: văn bản pháp lý, hành chính, báo in theo quy định dùng thuật ngữ Việt, ghi kèm tiếng Anh lần đầu. Trộn từ Anh cũng phải có chừng mực: chừa lại từ thông dụng thôi, cả câu tiếng Anh hoặc tiếng Việt nhập múi kiểu lai căng lại thành dấu khác.
 
-### B8-bổ-sung (sau eval v2): trợ từ cuối câu chưa kiểm chứng trên register báo chí-giọng trẻ
+### B8-bổ-sung (sau eval v2 và v4-threads): trợ từ cuối câu tách được ở tầng trả lời ngắn
 
-Eval v2 đo trợ từ cuối câu trên 12 cặp Góc nhìn/Genk/Kenh14: trung vị cả hai bên đều 0 (AUC 0,65 lệch vì vài bài). Kết luận: báo chí 'giọng trẻ' của người thật vẫn ít trợ từ cuối câu, tín hiệu này chỉ còn là giả thuyết cho register chat/tình cảm thân mật. Không dùng nó làm dấu hiệu quyết định.
+Eval v2 đo trợ từ cuối câu trên 12 cặp Góc nhìn/Genk/Kenh14: trung vị cả hai bên đều 0 (AUC 0,65 lệch vì vài bài). Kết luận: báo chí 'giọng trẻ' của người thật vẫn ít trợ từ cuối câu.
+
+Eval v4-threads (24 bài Threads + 12 cặp AI cùng chủ đề): AI 0/12 file có trợ từ; bài dài của người 7/24 (tối đa 26,3 mỗi 1000 âm tiết, trung vị 0); hai bộ trả lời đều 57,1 mỗi 1000 âm tiết. Kết luận: B8 là tín hiệu đã đo cho văn trả lời ngắn kiểu chat (dùng được như chỉ báo), nhưng không dùng cho bài kể chuyện dài vì cả hai bên đều gần 0. Không dùng nó làm dấu hiệu quyết định.
 
 ### B15. Cấu trúc đoạn khẩu ý (đo được ở v2), P1 [VD]
 

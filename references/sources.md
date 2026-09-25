@@ -151,3 +151,10 @@ Người dùng đọc bản README mới đã bắt đúng hai lỗi mà scanner
 ## 14. Nguồn dữ liệu Threads cho register khẩu ngữ (2026-09-25)
 
 Điều tra bốn đường lấy dữ liệu Threads (mạng xã hội của Meta) để lấp khoảng trống khẩu ngữ của mục 4: bsk với Chrome đã login (khuyến nghị chính), permalink công khai kèm data ẩn `thread_items` không cần login (code mẫu MIT của scrapfly), API chính thức (chỉ phục vụ tài khoản được cấp quyền, bỏ qua), dịch vụ trả phí kiểu Apify. Kèm bốn dataset comment người thật cùng register (ViHSD, UIT-ViCTSD, ViLexNorm, UIT-VSFC) và quy trình thu corpus v4-threads kèm lưu ý ẩn danh. Chi tiết: `references/threads-data.md`.
+
+## 15. Corpus v4-threads và đính chính báo cáo eval (2026-09-25)
+
+- Thu 24 bài Threads Việt Nam và 2 bộ trả lời bằng Chrome thật (browser-skill) đúng quy trình của mục 14; 12 cặp AI cùng chủ đề viết ở chế độ mặc định. Script `research/eval_threads.py`, báo cáo `references/eval-threads.md`, nguồn corpus trong `corpus/v4-threads/manifest.md`.
+- Kết quả chính: zlib 0,918 (người 0,75 cao hơn AI 0,57); Hán Việt trừu tượng 0,812 (AI 5,81/1000, người 0); TTR toàn cục lần đầu nghiêng về người (0,781; người 0,84, AI 0,75) trong khi MATTR-50 vẫn AI cao hơn (0,705); CV độ dài câu tụt còn 0,557 trên register này. Fightin' words: đối lập xưng hô mình/tao/mày (người) với tôi (AI) là từ khác biệt rõ nhất.
+- B8 (trợ từ cuối câu) có số liệu đầu tiên: AI 0/12 file; bài dài của người 7/24 file, tối đa 26,3/1000; replies 57,1/1000. Nâng B8 lên tín hiệu đã đo cho văn trả lời ngắn, giữ nguyên không dùng cho văn dài.
+- Đính chính: hàm `table()` của `eval_v2.py` hoán cột trung vị ở các dòng đổi chiều (ng>AI) ngay từ đầu; đã sửa và sinh lại `references/eval-v2.md` hôm 2026-09-25. Mọi AUC và ngưỡng không đổi; các cột trung vị của dòng ng>AI trong bản cũ là số của bên kia. `eval_luna.py` không dính lỗi.

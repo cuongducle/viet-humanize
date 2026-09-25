@@ -1,0 +1,1 @@
+Tôi là chủ nhà trọ, tôi nói thiệt là tháng 9 cả triệu sinh viên lên hn học, thì kiểu quái gì bọn tôi cũng cho thuê full dc phòng thôi. Các em có thời gian thì lên hn mà xem phòng sớm chốt sớm, thì sẽ lựa dc các phòng mới và giá tốt hơn. Chứ cái tầm đầu tháng 9 mới lên thì phòng ko còn ngon nữa đâu =))

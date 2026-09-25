@@ -1,0 +1,1 @@
+Chị gái tôi vừa gọi chửi cho 1 trận và bảo mấy đứa 2k3 2k4 bây giờ mới ra trường đi làm cũng lương tháng 20tr trở lên rồi, 99 thì lên làm quản lý hết rồi, bây giờ m lương 10-12tr sống lay lắt qua ngày thế thì làm sao? Rồi còn lấy ck nữa, k có cv ổn định thì ai lấy?

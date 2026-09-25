@@ -1,0 +1,1 @@
+Nếu bạn nào đang phân vân ko biết kiếm job remote ở nước nào cho ngon thì mình highly recommend từ nước Đài Loan nha, nhiẻu jobs vẫn sử dụng TA để làm được, chung văn hóa Á Đông nên ko có rào quá lớn, vẫn có thưởng Tết to bự, lương tháng 13, tưng lương theo performance 5-10%/năm, giỏi thì được thăng tiến 2-3 lần/năm là chuyện bình thường

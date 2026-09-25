@@ -1,0 +1,1 @@
+Sếp tôi lương 5x triệu/tháng (chưa bao gồm thưởng), chồng có công ty riêng. Hiện đang ở chung cư, có vài mảnh đất. Vậy mà sếp vẫn dậy sớm đi chợ dân sinh, đi làm bằng xe bus (50-60 phút/lượt). Còn tôi lương 1/2 sếp nhưng lười nên mua đồ siêu thị, đi đâu thì book grab😂Thu nhập sếp gấp đôi, nhưng phần dư ra sau tiêu dùng chắc gấp 5-10 lần tôi😅

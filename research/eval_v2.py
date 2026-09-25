@@ -30,9 +30,9 @@ def table(mh, ma, keys, title, out):
         x = [m.get(k, 0.0) or 0.0 for m in mh]; y = [m.get(k, 0.0) or 0.0 for m in ma]
         if len(set(x)) < 2 and len(set(y)) < 2 and set(x) == set(y): continue
         a = auc(x, y)
-        if a < 0.5: a, d = 1 - a, "ng>AI"; xr, yr = y, x
-        else: d, xr, yr = "AI>ng", x, y
-        rows.append((max(a, 1 - a), k, a, d, sorted(xr)[len(xr)//2], sorted(yr)[len(yr)//2]))
+        if a < 0.5: a, d = 1 - a, "ng>AI"
+        else: d = "AI>ng"
+        rows.append((max(a, 1 - a), k, a, d, sorted(x)[len(x)//2], sorted(y)[len(y)//2]))
     rows.sort(reverse=True)
     for _, k, a, d, m1, m2 in rows:
         out.append(f"| `{k}` | {a:.3f} | {d} | {m1:.2f} | {m2:.2f} |\n")

@@ -71,3 +71,7 @@ Ngoài ra OpenSubtitles tiếng Việt cho register hội thoại phim, tham kh�
 - Repo này công khai. Không commit văn nguyên văn dài kèm handle. Chỉ giữ trích đoạn đã ẩn danh, nêu rõ ngày lấy và cách lấy.
 - Không lấy bài riêng tư, không lưu thông tin định danh cá nhân, không gọi API dồn dập.
 - Dataset học thuật dùng đúng điều khoản của từng repo.
+
+## Trạng thái
+
+Vòng pilot đã chạy ngày 2026-09-25: 24 bài, 2 bộ trả lời, 12 cặp AI. Kết quả và giới hạn nằm trong `references/eval-threads.md`, tóm tắt ở mục 15 của `sources.md`. Việc còn treo: lấy thêm khoảng 10 bộ trả lời để chốt số cho B8 trên tầng ngắn.

@@ -1,0 +1,1 @@
+Hổm đọc được comment ở đâu đó troll về giá nhà trọ ở SG, kiểu: Yeah! mình đã đóng xong tiền trọ tháng này, đã có một chỗ yên tâm nằm chết [đói] giữa SG... Nó hài mà nó chuẩn 🤣 Đây là tiền trọ tháng 6 của mình, mình share phòng với một đứa quốc tịch Anh, lông ngắn. Mình bao nuôi nó.

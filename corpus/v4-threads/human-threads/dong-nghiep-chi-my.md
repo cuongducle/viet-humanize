@@ -1,0 +1,1 @@
+Cách đây hơn một nắm trước, trong công ty có một chị đồng nghiệp khá thân với mình, chị tên My, bình thường sau giờ làm tụi mình hay hẹn nhau đi ăn uống nói chuyện chơi, hôm đó cũng vậy tụi mình hẹn nhau về nhà tắm rửa rồi mới đi, lúc đi mình dẫn theo Mạnh (ny) và vì đường nhà chị cùng tuyến đường ở quán ăn mà tụi mình đã hẹn cho nên định bụng sẽ chạy lại đó rồi cùng đi luôn.
