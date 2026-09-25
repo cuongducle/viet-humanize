@@ -147,3 +147,7 @@ Người dùng đọc bản README mới đã bắt đúng hai lỗi mà scanner
 3. Mỗi câu mới phải thêm fact, nguyên nhân, ví dụ, ngoại lệ hoặc hệ quả. Nếu chỉ nhắc lại câu trước, cắt nó.
 4. Khi chuyển chủ đề, báo bằng một chủ thể hoặc quan hệ thật. Không rải "ngoài ra", "hơn nữa", "do đó", "tóm lại" theo một khuôn cố định.
 5. Quy tắc B16 và B17 hiện là hướng dẫn biên tập [TT]/[NN], chưa phải đặc trưng AI đã được đo. Cần corpus có gắn nhãn kết hợp từ và cấu trúc diễn ngôn trước khi nâng thành tín hiệu định lượng.
+
+## 14. Nguồn dữ liệu Threads cho register khẩu ngữ (2026-09-25)
+
+Điều tra bốn đường lấy dữ liệu Threads (mạng xã hội của Meta) để lấp khoảng trống khẩu ngữ của mục 4: bsk với Chrome đã login (khuyến nghị chính), permalink công khai kèm data ẩn `thread_items` không cần login (code mẫu MIT của scrapfly), API chính thức (chỉ phục vụ tài khoản được cấp quyền, bỏ qua), dịch vụ trả phí kiểu Apify. Kèm bốn dataset comment người thật cùng register (ViHSD, UIT-ViCTSD, ViLexNorm, UIT-VSFC) và quy trình thu corpus v4-threads kèm lưu ý ẩn danh. Chi tiết: `references/threads-data.md`.
