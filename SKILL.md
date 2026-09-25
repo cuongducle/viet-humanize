@@ -1,9 +1,9 @@
 ---
 name: viet-humanize
-description: 'Biên tập văn tiếng Việt bỏ dấu văn AI, dựa trên danh mục dấu hiệu có nguồn trích dẫn (Wikipedia Signs of AI writing, dataset ViDetect, báo chí và giáo viên Việt Nam). Ba chế độ: viết lại, chỉ đánh dấu, sửa tại chỗ file. Kèm máy quét deterministic scripts/vi_scan.py và trình kiểm bảo tồn số liệu. Dùng khi người dùng nói "viết tự nhiên", "không nghe giống AI", "humanize", "bỏ dấu AI", "qua tool dò AI", "kiểm tra văn bản AI", hoặc khi viết/sửa bài tiếng Việt dài.'
+description: 'Biên tập văn tiếng Việt bỏ dấu văn AI, dựa trên danh mục dấu hiệu có nguồn trích dẫn (Wikipedia Signs of AI writing, dataset ViDetect, corpus Threads 77 bài, báo chí và giáo viên Việt Nam). Ba chế độ: viết lại, chỉ đánh dấu, sửa tại chỗ file. Kèm máy quét deterministic scripts/vi_scan.py và trình kiểm bảo tồn số liệu. Dùng khi người dùng nói "viết tự nhiên", "không nghe giống AI", "humanize", "bỏ dấu AI", "qua tool dò AI", "kiểm tra văn bản AI", hoặc khi viết/sửa bài tiếng Việt dài.'
 license: MIT
 metadata:
-  version: "1.6.0"
+  version: "1.7.0"
 ---
 
 # Viet-humanize: biên tập văn tiếng Việt bỏ dấu AI
@@ -16,6 +16,7 @@ Mọi dấu hiệu trong skill này có nhãn nguồn:
 - **[TT]** quan sát thực tiễn bản địa: báo Việt, giáo viên, nhóm content (chưa có thống kê công khai)
 - **[HL]** suy diễn từ nghiên cứu phát hiện tiếng Anh, CHƯA kiểm chứng cho tiếng Việt, chỉ dùng kèm dấu khác
 - **[NN]** sự kiện mô tả chuẩn trong ngôn ngữ học tiếng Việt (Thompson 1965; Nguyễn Tài Cẩn 1975; Cao Xuân Hạo 1998), chưa phải thống kê về đầu ra AI
+- **[v4]** đo trên corpus v4-threads (77 bài Threads người so với 30 bài AI cùng chủ đề, tham chiếu chéo ViHSD), hợp lệ cho register chat, xem references/eval-threads.md
 
 ## Ba chế độ
 
@@ -31,7 +32,7 @@ Bước 1, chạy máy quét deterministic:
 ```bash
 python3 scripts/vi_scan.py scan FILE
 ```
-Kết quả là điểm 0-100 + danh sách theo dòng + số nhịp học: CV và độ lệch (skewness) độ dài câu/đoạn, MATTR-50, trợ từ cuối câu, liên từ hình thức, mật độ Hán Việt hành chính, từ láy, entropy dấu câu, tỷ lệ nén zlib. Các chỉ số ngôn ngữ học chỉ tham khảo báo cáo (không cộng điểm, trừ khi tích thành cảnh báo giọng sách vở). Ngưỡng nhịp học chính đã hiệu chỉnh trên corpus pilot 42 mẫu (xem references/calibration.md): CV câu < 0,28 tách 0/21 văn người vs 16/21 văn AI; điểm scan tổng hợp chỉ đạt AUC 0,529 trên register trang trọng, tức máy quét chỉ là công cụ biên tập bề mặt, KHÔNG phải bộ phát hiện AI. Dùng làm rà vòng 1, KHÔNG dùng làm phán quyết.
+Kết quả là điểm 0-100 + danh sách theo dòng + số nhịp học: CV và độ lệch (skewness) độ dài câu/đoạn, MATTR-50, trợ từ cuối câu, liên từ hình thức, mật độ Hán Việt hành chính, từ láy, entropy dấu câu, tỷ lệ nén zlib. Các chỉ số ngôn ngữ học chỉ tham khảo báo cáo (không cộng điểm, trừ khi tích thành cảnh báo giọng sách vở). Ngưỡng nhịp học chính đã hiệu chỉnh trên corpus pilot 42 mẫu (xem references/calibration.md): CV câu < 0,28 tách 0/21 văn người vs 16/21 văn AI trên register trang trọng; điểm scan tổng hợp chỉ đạt AUC 0,529 trên register trang trọng và 0,66-0,72 trên chat thật (corpus v4-threads), tức máy quét chỉ là công cụ biên tập bề mặt, KHÔNG phải bộ phát hiện AI. Cảnh báo từ v4-threads: ngưỡng CV của văn trang trọng MẤT hiệu lực trên register chat (AUC 0,512, người chat viết câu cộc xen dài là bình thường). Dùng làm rà vòng 1, KHÔNG dùng làm phán quyết, và KHÔNG lấy ngưỡng của register này phán xét register khác.
 
 Bước 2, đọc toàn văn và đánh dấu theo danh mục trong references/patterns-full.md, mạnh nhất trước. Nhìn cả hình khối: tương phản xẻ hai câu, bộ ba ở tầm đoạn, cùng một câu chốt lặp sau mỗi phần.
 
@@ -60,10 +61,11 @@ Chi tiết từng dấu với ví dụ trước/sau: references/patterns-full.md
 3. **Đơn vị chuẩn Việt Nam**: dấu phẩy thập phân (9,81 triệu), "tệ" thay ký hiệu tiền Trung Quốc, tên riêng Latin giữ nguyên. Thuật ngữ nền tảng Trung Quốc phải latin hóa và giải thích lần đầu (Xianyu = chợ đồ cũ của Alibaba).
 4. **Sai sót nhẹ có chủ đích**: giọng blog/mạng xã hội cho phép một câu cửa miệng, một cách nói địa phương, một chỗ trùng từ. Văn người không đều tăm tắp. [HL]
 5. **Kết cấu đoạn theo ViDetect**: văn AI tiếng Việt viết đoạn dài, câu ít, phân tích đơn tuyến; người viết nhiều câu hơn, đổi góc nhìn trong đoạn. Khi viết lại: tách đoạn dài, để mỗi câu thêm một thông tin mới hoặc làm rõ quan hệ với câu trước. Đừng viết câu kết chỉ để nhắc lại cả đoạn. [VD]
-6. **Chọn từ, dùng đúng register** (eval v2 và test GPT Luna): (a) ở văn trang trọng, văn AI vẫn dùng động từ Hán Việt trừu tượng đậm hơn văn người (Luna: 6,6 so với 3,1 mỗi 1000 âm tiết; AUC 0,64): đổi sang động từ thường khi nghĩa cho phép (triển khai thành làm, hỗ trợ thành giúp, khắc phục thành sửa); lặp tên riêng thay vì xoay vòng "dịch vụ này, nền tảng đó"; đừng né động từ gốc có, được, là, dùng. Không áp dụng máy móc quy tắc này cho khẩu ngữ: AI cũ có mật độ cao, nhưng Luna lại thấp hơn người (0 so với 4,3). (b') Văn người khẩu ý có ngôi thứ nhất (tôi, anh, mình) và động từ đời thường (chơi, có, còn, được); văn AI phi-ngôi, lơ lửng giữa khái niệm trừu tượng (hội nhập, sản phẩm, nhu cầu). Viết lại register này: thêm tiếng nói ngôi thứ nhất, ghim cụ thể. [HL, cần thêm model]
+6. **Chọn từ, dùng đúng register** (eval v2, test GPT Luna và corpus v4-threads): (a) ở văn trang trọng, văn AI vẫn dùng động từ Hán Việt trừu tượng đậm hơn văn người (Luna: 6,6 so với 3,1 mỗi 1000 âm tiết; AUC 0,64): đổi sang động từ thường khi nghĩa cho phép (triển khai thành làm, hỗ trợ thành giúp, khắc phục thành sửa); lặp tên riêng thay vì xoay vòng "dịch vụ này, nền tảng đó"; đừng né động từ gốc có, được, là, dùng. Trên chat thật (v4-threads) khoảng cách còn rộng hơn: người 0, AI mặc định 5,75 mỗi 1000. Riêng khẩu ý kiểu báo chí giọng trẻ thì Luna lại viết ít Hán Việt hơn người, nên không dùng chỉ số này phán bài khẩu ý đã biên tập. (b') Văn người khẩu ý có ngôi thứ nhất (tôi, anh, mình) và động từ đời thường (chơi, có, còn, được); văn AI phi-ngôi, lơ lửng giữa khái niệm trừu tượng (hội nhập, sản phẩm, nhu cầu). Viết lại register này: thêm tiếng nói ngôi thứ nhất, ghim cụ thể. [HL + v4]
 (b) Từ tiếng Anh thông dụng thì GIỮ NGUYÊN, đừng dịch: skill, repo, commit, push, pull request, review, feedback, deadline, roadmap, checklist, file, folder, link, email, online, chatbot, prompt, token, model, framework, library, update, bug, fix, deploy. Người viết công nghệ Việt trộn tự nhiên; dịch thành "yêu cầu kéo", "kho mã nguồn", "thư điện tử" vừa nghe máy vừa đẩy mật độ Hán Việt lên. Ngoại lệ: văn pháp lý, hành chính, báo in cần thuật ngữ Việt, ghi kèm tiếng Anh lần đầu. [VD][TT]
 7. **Không tự chế ẩn dụ biên tập**: đừng viết "danh từ có điểm tựa", "câu có chuyển động" hay "nhịp câu bớt đồng phục" nếu ý thật chỉ là gọi đúng người, vật, việc và xen câu dài với câu ngắn. Ưu tiên câu literal, có động từ và có chủ thể. Một ẩn dụ chỉ nên giữ khi đó là cách nói quen thuộc của register hoặc nằm trong giọng riêng của người viết. [TT]
 8. **Triển khai ý theo sự việc, không theo bộ khung**: câu đầu cho biết đang nói về ai, vật gì, thời điểm nào hoặc vấn đề nào. Câu sau thêm một fact, lý do, ví dụ hoặc ngoại lệ. Khi đổi chủ thể, gọi tên lại; đừng xoay vòng danh từ trừu tượng để tránh lặp. Chỉ dùng "ngoài ra", "do đó", "tóm lại" khi quan hệ giữa hai câu thật sự cần nó. Cuối đoạn nên thêm hệ quả, giới hạn hoặc bước tiếp theo, không nhắc lại nguyên câu đầu. Đây là quy tắc biên tập theo cấu trúc đề thuyết và mạch lạc tiếng Việt, không phải dấu phát hiện AI. [NN][TT]
+9. **Viết register chat (caption, reply, mạng xã hội)**, từ corpus v4-threads (77 bài người so với 30 bài AI cùng chủ đề, tham chiếu chéo ViHSD 16.319 comment): trợ từ cuối câu (nhé, đấy, đó, cơ, nhỉ, ạ, nè, ha) là dấu người thật ở câu ngắn - người 27/77 bài và 7/12 bộ trả lời có, AI chỉ 3/30; mật độ dao động rộng nên cứ tự nhiên chứ đừng rải đều. Câu cộc xen câu dài là bình thường, đừng ép nhịp đều. Hán Việt trừu tượng và phó từ cường độ kiểu sách vở gần như vắng trong chat thật (người 0, AI 6-11 mỗi 1000). Xưng hô theo quan hệ (mình, tui, tao, mày, em) một cách nhất quán, tránh phi-ngôi. Viết tắt và số thẳng (t, bt, nma, dc, 1 thay một) tự nhiên ở giọng này nhưng chỉ dùng khi văn bản gốc đã thuộc register chat, không áp cho loại văn khác. [v4]
 
 ## Ví dụ đầy đủ (ngữ cảnh bản địa: bài chuẩn SEO, nơi văn AI dày đặc nhất ở Việt Nam)
 
@@ -101,7 +103,11 @@ viet-humanize/
 ├── references/
 │   ├── patterns-full.md        # danh mục 25+ dấu hiệu, trước/sau, nhãn nguồn
 │   ├── sources.md              # mọi nguồn trích dẫn + khoảng trống chưa kiểm chứng
-│   └── methodology.md          # 4 trường phái quan sát + quy trình tác giả đã áp dụng
+│   ├── methodology.md          # 4 trường phái quan sát + quy trình tác giả đã áp dụng
+│   ├── threads-data.md         # nguồn data Threads cho register khẩu ngữ + quy trình thu bsk
+│   └── eval-threads.md         # kết quả đo corpus v4-threads
+├── corpus/                     # các tập văn người/máy theo register (v2, v3-luna, v4-threads)
+├── research/                   # script thu thập và đánh giá corpus
 └── scripts/
     └── vi_scan.py              # máy quét + verify + selftest
 ```
