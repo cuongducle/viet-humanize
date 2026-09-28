@@ -1,0 +1,14 @@
+{
+  "name": "viet-humanize",
+  "owner": {
+    "name": "Cuong Duc Le"
+  },
+  "plugins": [
+    {
+      "name": "viet-humanize",
+      "source": "./",
+      "description": "Biên tập văn tiếng Việt bỏ dấu văn AI: danh mục dấu hiệu có nguồn trích dẫn, máy quét deterministic, kiểm bảo toàn số liệu",
+      "category": "writing"
+    }
+  ]
+}

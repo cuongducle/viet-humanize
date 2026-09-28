@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="220" viewBox="0 0 880 220">
+  <rect width="880" height="220" rx="12" fill="#111111"/>
+  <rect width="10" height="220" rx="5" fill="#78c8a0"/>
+  <text x="46" y="78" font-family="-apple-system, Helvetica, Arial" font-size="44" font-weight="700" fill="#f0f0ee">viet-humanize</text>
+  <text x="48" y="128" font-family="-apple-system, Helvetica, Arial" font-size="26" fill="#78c8a0">Viết tiếng Việt như người thật</text>
+  <text x="48" y="172" font-family="-apple-system, Helvetica, Arial" font-size="17" fill="#969690">119 văn người thật đã đo · scanner deterministic · verify số liệu · MIT</text>
+</svg>

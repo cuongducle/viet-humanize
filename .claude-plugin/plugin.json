@@ -1,0 +1,5 @@
+{
+  "name": "viet-humanize",
+  "description": "Vietnamese humanize skill: biên tập văn tiếng Việt bỏ dấu văn AI",
+  "skills": ["./"]
+}
