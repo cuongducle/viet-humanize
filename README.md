@@ -39,11 +39,7 @@ Bạn có thể bắt đầu bằng một yêu cầu ngắn:
 Viết lại đoạn dưới cho tự nhiên, giữ nguyên số liệu và ý chính. Đừng thêm thông tin mới.
 ```
 
-Có ba cách làm việc:
-
-- **Viết lại.** Agent đọc toàn văn, sửa cách diễn đạt và tự kiểm tra lại.
-- **Chỉ dò.** Gõ `chỉ dò:` nếu bạn muốn xem những chỗ đáng ngờ mà chưa muốn sửa.
-- **Sửa file.** Nêu đường dẫn file nếu muốn agent sửa trực tiếp. Phần code, URL, bảng và số liệu được giữ lại rồi kiểm tra bằng `verify`.
+Không cần chọn chế độ hay gõ lệnh đặc biệt. Agent tự áp dụng skill mỗi khi viết hoặc sửa văn tiếng Việt: dán văn vào là được viết lại kèm bảng dấu đã sửa; nêu đường dẫn file là agent sửa trực tiếp (phần code, URL, bảng, số liệu giữ nguyên và kiểm bằng `verify`); hỏi "kiểm tra" thì nhận danh sách chỗ đáng ngờ mà chưa sửa gì.
 
 ## Skill thực sự sửa những gì?
 

@@ -1,9 +1,9 @@
 ---
 name: viet-humanize
-description: 'Biên tập văn tiếng Việt bỏ dấu văn AI, dựa trên danh mục dấu hiệu có nguồn trích dẫn (Wikipedia Signs of AI writing, dataset ViDetect, corpus Threads 77 bài, báo chí và giáo viên Việt Nam). Ba chế độ: viết lại, chỉ đánh dấu, sửa tại chỗ file. Kèm máy quét deterministic scripts/vi_scan.py và trình kiểm bảo tồn số liệu. Dùng khi người dùng nói "viết tự nhiên", "không nghe giống AI", "humanize", "bỏ dấu AI", "qua tool dò AI", "kiểm tra văn bản AI", hoặc khi viết/sửa bài tiếng Việt dài.'
+description: 'Biên tập văn tiếng Việt bỏ dấu văn AI, dựa trên danh mục dấu hiệu có nguồn trích dẫn (Wikipedia Signs of AI writing, dataset ViDetect, corpus Threads 77 bài, báo chí và giáo viên Việt Nam). Tự áp dụng mỗi khi agent viết hoặc sửa văn tiếng Việt: viết lại khi người dùng dán văn, sửa tại chỗ khi nêu file, chỉ liệt kê dấu khi được hỏi kiểm tra. Kèm máy quét deterministic scripts/vi_scan.py và trình kiểm bảo tồn số liệu. Dùng khi người dùng nói "viết tự nhiên", "không nghe giống AI", "humanize", "bỏ dấu AI", "qua tool dò AI", "kiểm tra văn bản AI", hoặc khi viết/sửa bài tiếng Việt dài.'
 license: MIT
 metadata:
-  version: "1.7.0"
+  version: "1.8.0"
 ---
 
 # Viet-humanize: biên tập văn tiếng Việt bỏ dấu AI
@@ -18,11 +18,15 @@ Mọi dấu hiệu trong skill này có nhãn nguồn:
 - **[NN]** sự kiện mô tả chuẩn trong ngôn ngữ học tiếng Việt (Thompson 1965; Nguyễn Tài Cẩn 1975; Cao Xuân Hạo 1998), chưa phải thống kê về đầu ra AI
 - **[v4]** đo trên corpus v4-threads (77 bài Threads người so với 30 bài AI cùng chủ đề, tham chiếu chéo ViHSD), hợp lệ cho register chat, xem references/eval-threads.md
 
-## Ba chế độ
+## Skill tự bật, người dùng không chọn chế độ
 
-1. **Viết lại (mặc định)**: đánh dấu → viết lại → quét vòng 2 → nộp kèm bảng thay đổi.
-2. **Chỉ đánh dấu**: khi người dùng nói "kiểm tra", "scan", "chỉ đánh dấu". Trả về danh sách theo mức P0/P1/P2, kèm nhận định dấu nào là vấn đề thật, dấu nào có thể cố ý.
-3. **Sửa tại chỗ file**: khi người dùng nêu tên file. Sửa văn xuôi, giữ nguyên code, YAML, URL, bảng, đường dẫn. Chạy `verify` trước khi nộp (xem dưới).
+Cài vào là agent dùng mỗi lần viết hoặc sửa văn xuôi tiếng Việt. Ba tình huống agent tự nhận theo yêu cầu của người dùng:
+
+1. **Người dùng dán văn** (hoặc nhờ viết bài mới): viết lại theo quy trình dưới, nộp bản mới kèm bảng ngắn: dòng nào sửa vì dấu gì, dấu nào bỏ qua vì cố ý, chỗ nào chưa chắc cần người đọc lại.
+2. **Người dùng nêu tên file**: sửa phần văn xuôi trong file, giữ nguyên code, YAML, URL, bảng, đường dẫn. Chạy `verify` trước khi nộp.
+3. **Người dùng hỏi kiểm tra** ("kiểm tra", "scan", "chỉ đánh dấu"): trả danh sách theo mức P0/P1/P2 kèm nhận định dấu nào là vấn đề thật, dấu nào có thể cố ý. Chưa sửa gì cho tới khi người dùng đồng ý.
+
+Mức can thiệp theo loại văn lấy ở ma trận dung sai dưới, không hỏi lại người dùng trừ khi thiếu thông tin thật sự.
 
 ## Quy trình
 
@@ -40,7 +44,7 @@ Bước 3, viết lại: giữ mọi khẳng định, con số, tên riêng, tr�
 
 Bước 4, vòng 2 (bắt buộc): chạy lại máy quét + tự đọc thành tiếng. Rà năm dấu sống sót kinh điển: một "không chỉ... mà còn", một câu chốt một dòng, một gạch ngang dài, một bộ ba, một nhãn in đậm.
 
-Bước 5 (chế độ sửa file): kiểm bảo tồn:
+Bước 5 (khi sửa file): kiểm bảo tồn:
 ```bash
 python3 scripts/vi_scan.py verify TRUOC.md SAU.md
 ```
