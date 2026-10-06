@@ -145,7 +145,7 @@ def _skew(xs):
 
 # Từ láy (Thompson 1965: đặc trưng hình thái tiếng Việt): người dùng giàu,
 # AI gần như không sinh từ láy mới — tín hiệu NGƯỜI. Đếm bằng danh sách tuyển
-# chọn để giữ độ chính xác (heuristic tự do bắn quá tay, xem methodology.md)
+# chọn để hạn chế khớp sai; không bao phủ mọi từ láy tiếng Việt
 REDUP_LIST = [
     "lao xao", "lấp lánh", "lấp ló", "lom khom", "lũ lượt", "la liệt",
     "líu lo", "líu lưỡi", "lì lì", "rì rầm", "rộn ràng", "rạo rực",

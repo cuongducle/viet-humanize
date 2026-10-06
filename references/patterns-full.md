@@ -1,198 +1,83 @@
-# Danh mục dấu hiệu đầy đủ (32 dấu, trước/sau, nhãn nguồn)
+# Biên tập theo ngữ cảnh: cách sửa và ngoại lệ
 
-Lớp A = dấu phổ quát (khái niệm dịch từ Wikipedia Signs of AI writing, ví dụ viết lại cho tiếng Việt).
-Lớp B = dấu riêng của tiếng Việt (nguồn ghi từng dấu).
-Lớp C = ngữ cảnh văn hóa, xem ma trận dung sai trong SKILL.md.
+Đừng hỏi một câu có “giống AI” không. Hãy hỏi nó có đúng nghĩa, rõ ý và phù hợp người đọc trong văn bản này không. Nếu đã đạt, không cần đổi.
 
-Quy ước mức: P0 gặp một lần là sửa; P1 sửa khi xuất hiện hoặc cụm; P2 cân nhắc theo ngữ cảnh, dấu "yếu khi đứng một mình" cần dấu bạn cùng đoạn.
+## Những chỗ thường cần đọc lại
 
-## Lớp A, Dàn cảnh thay vì nêu ý
+| Chỗ cần xem | Sửa khi | Giữ khi |
+|---|---|---|
+| Mở bài bằng bối cảnh | Quá rộng, chưa giúp hiểu vấn đề | Người đọc cần nền tảng hoặc tác phẩm cần dựng cảnh |
+| Câu dài | Nhiều quan hệ chồng nhau khiến khó theo dõi | Câu vẫn rõ và cần giữ các điều kiện cùng nhau |
+| Câu ngắn, đoạn một câu | Làm đứt ý ngoài ý muốn | Nhấn, chuyển cảnh hoặc giúp đọc nhanh |
+| Từ trang trọng, từ Hán Việt | Là từ đệm hoặc lệch người đọc | Là thuật ngữ chính xác hay đúng giọng văn bản |
+| Từ Anh và từ mượn | Người đọc không hiểu hoặc bản dịch không tự nhiên | Đúng quy ước ngành, tên sản phẩm hoặc định danh |
+| Lặp từ, lặp cấu trúc | Không giúp nối ý, nhấn hoặc làm rõ | Giữ chủ thể rõ, tạo nhịp hoặc có dụng ý nghệ thuật |
+| Từ nối | Không đúng quan hệ giữa hai ý | Giúp nhận ra bổ sung, đối lập, nguyên nhân hoặc hệ quả |
+| Câu bị động, chủ ngữ lược bỏ | Không biết ai làm gì mà thông tin đó cần thiết | Tác nhân đã rõ, không quan trọng hoặc chưa biết |
+| Lời chào, lời chúc, lời mời | Được chèn máy móc, không liên quan | Đúng quan hệ và mục đích giao tiếp |
+| Câu tổng kết | Chỉ kéo dài đoạn mà không giúp hiểu | Cần ôn ý, kết luận hoặc chốt việc |
+| Ẩn dụ | Che nghĩa trong văn giải thích hoặc gây hiểu sai | Giúp hình dung, biểu đạt cảm xúc hoặc tạo giọng riêng |
+| Dấu câu, in đậm, emoji | Gây rối hoặc không hợp kênh đăng | Mang nghĩa, hỗ trợ tra cứu hoặc hợp quy ước |
 
-### A1. Tương phản bơm "không chỉ X mà còn Y", P0 [W][TT]
-Vế phủ định nêu điều chẳng ai khẳng định, để vế sau nghe to. Sửa: nêu thẳng. Giữ khi vế phủ định đính chính niềm tin người đọc thật có.
-- Trước: "Nó không chỉ là một công cụ, mà là người bạn đồng hành."
-- Sau: "Công cụ này giúp việc nhóm dễ hơn."
-- Biến thể: "không đơn thuần là... mà là", "không phải X, mà là Y", xẻ hai câu ("Điều này không có nghĩa là X. Nó có nghĩa là Y."), đuôi phủ định cụt.
+Không có tỷ lệ câu ngắn, số trợ từ hay mật độ từ vựng nào cần đạt. Đặc điểm thường gặp ở một nhóm văn bản không phải chuẩn cho tất cả.
 
-### A2. Câu chốt một dòng, P0 [W]
-Đoạn một câu nhắc lại ý đoạn trước; hàng mảnh câu kịch tính; từ tách chữ.
-- Trước: "Đó mới là điều quan trọng." / "Không mỹ học. Không hoài niệm."
-- Sau: cắt; hoặc gộp thành một câu có khẳng định cụ thể.
+## Những thay đổi dễ làm sai nội dung
 
-### A3. Câu nghe sâu sắc, P0 [W][HL]
-- Theo dõi: "câu hỏi thực sự là", "về bản chất", "thực chất điều quan trọng là", "X chính là Y của Z".
-- Sửa: thay bằng khẳng định cụ thể.
+- **Bỏ hạn định:** “có thể giúp giảm” thành “giúp giảm” làm tăng độ chắc chắn.
+- **Đổi quan hệ:** “sau khi áp dụng” thành “nhờ áp dụng” tự thêm nguyên nhân.
+- **Đổi thuật ngữ:** “phê duyệt” thành “đồng ý” có thể mất nghĩa quy trình.
+- **Làm cụ thể bằng dữ kiện mới:** thêm tên khách hàng, con số hoặc nguồn mà bản gốc không có.
+- **Rút câu mất ngoại lệ:** giữ lợi ích nhưng bỏ điều kiện áp dụng.
+- **Đổi xưng hô:** biến email trang trọng thành lời nhắn thân mật khi chưa được yêu cầu.
 
-### A4. Mở dàn cảnh, P0 [W][TT]
-- Trước: "Trong thời đại công nghệ số hóa ngày nay, hãy cùng tìm hiểu nhé!"
-- Sau: vào thẳng fact đầu tiên.
-- Biến thể Việt hay gặp: "Dưới đây là những điều bạn cần biết về...", "Nhìn chung thì...", "Nói một cách đơn giản thì..." mở bài thông thường.
+Nếu nguồn thiếu hoặc khẳng định đáng ngờ, nêu phần cần xác minh. Không tự tìm một dữ kiện nghe hợp lý để lấp vào. Nếu người dùng chỉ cho sửa câu chữ, chưa được tự đổi luận điểm.
 
-### A5. Cãi với người không có mặt, P1 [W]
-"tôi không nói rằng", "cần nói rõ rằng", "đừng hiểu nhầm", "có người sẽ nói... nhưng". Thường là tàn dư bản nháp. Cắt, giữ khẳng định nếu có.
+## Ví dụ minh họa
 
-## Lớp A, Nhịp điệu công thức
+Các ví dụ dưới đây giải thích một lựa chọn biên tập, không phải dữ liệu nghiên cứu hoặc khuôn bắt buộc.
 
-### A6. Bộ ba ép, P2 [W]
-Ý đến theo bộ ba cho "đủ" ("nhanh, chuyên nghiệp và hiệu quả"; ba ví dụ song song rồi rút ra bài học). Kiểm tra: mỗi mục có thêm ý riêng không? Ba mục thật thì giữ.
+### Hướng dẫn: bỏ cụm đệm
 
-### A7. Mở câu lặp x3, P1 [W]
-Ba câu liên tiếp mở bằng cùng một từ ("Nó... Nó... Nó..."). Gộp, đổi chủ ngữ, mở bằng hành động. Lặp chủ ý tạo nhịp thì được phép.
+Trước: “Bạn cần tiến hành việc lưu lại tài liệu trước khi thực hiện thao tác đóng cửa sổ.”
 
-### A8. Gạch ngang dài nối vạn năng, P0 [W][TT]
-Bản cuối không chứa, hay – (trừ khi mẫu người dùng dùng). Thay bằng dấu chấm, phẩy, hai chấm, ngoặc, hoặc viết lại. Gạch trong code/URL giữ nguyên.
+Sau: “Bạn cần lưu tài liệu trước khi đóng cửa sổ.”
 
-### A9. Hạn định chất chồng, P1 [W]
-"khá là", "có lẽ", "tương đối", "có thể nào đó", "một cách nào đó" chất từng lớp. Giữ hạn định khi nguồn hỗ trợ; "có lẽ", "thường là" là thói quen người.
+Giữ điều kiện và thứ tự thao tác, chỉ bớt cách nói vòng.
 
-### A10. Nhịp đều máy móc, P2 [VD]
-Câu dài bằng nhau, đoạn dài bằng nhau (CV thấp, máy quét báo). ViDetect: văn AI tiếng Việt câu ít, đoạn dài, đơn tuyến. Sửa: tách đoạn, xen câu cụt, đổi góc giữa đoạn.
+### Báo cáo: giữ giới hạn
 
-## Lớp A, Khoa trương và mượn uy tín
+Trước: “Kết quả khảo sát cho thấy rằng phương án này có thể giúp giảm thời gian chờ, tuy nhiên hiện chưa có dữ liệu vào giờ cao điểm.”
 
-### A11. Cường điệu ý nghĩa, P1 [W][TT]
-"đánh dấu bước ngoặt", "đóng vai trò then chốt", "mở ra kỷ nguyên mới", "di sản bền vững", "tương lai tươi sáng", "hướng đi đúng đắn", mục đóng sẵn "Thách thức và triển vọng". Giữ fact, bỏ lớp ý nghĩa; kết bằng fact cụ thể cuối.
+Sau: “Khảo sát cho thấy phương án này có thể giảm thời gian chờ, nhưng chưa có dữ liệu vào giờ cao điểm.”
 
-### A12. Mượn uy tín không tên, P0 [W][TT]
-"chuyên gia cho rằng", "các nhà nghiên cứu chỉ ra", "một số ý kiến cho rằng". Có nguồn thật thì nêu nguồn + nội dung; không thì cắt. Không bao giờ bịa nguồn.
+Giữ “có thể” và phần chưa có dữ liệu.
 
-### A13. Ngôn ngữ bán hàng, P1 [W][TT]
-"tọa lạc giữa", "nơi hội tụ", "vẻ đẹp tuyệt diệu", "phong phú đa dạng", "điểm đến lý tưởng", "ấn tượng khó quên"; ẩn dụ đầu tư "về lâu dài vẫn xứng đáng là khoản đầu tư". Nêu thẳng sự vật.
+### Thông báo: giữ phép lịch sự
 
-### A14. Né động từ "là/có", P1 [W][HL]
-"đóng vai trò là", "được xem là", "hiện diện như một", "sở hữu", "mang đến", "cung cấp" thay "là/có". Dùng "là" và "có".
+Trước: “Đề nghị quý khách thực hiện việc kiểm tra thông tin trước khi tiến hành xác nhận.”
 
-### A15. Vế "qua đó" cầm canh, P1 [W][HL]
-"qua đó khẳng định", "nhằm đề cao", "góp phần nâng tầm". Giữ fact; chỉ giữ vế khi nguồn hỗ trợ đúng điều nó khẳng định.
+Sau: “Đề nghị quý khách kiểm tra thông tin trước khi xác nhận.”
 
-### A23. Khuôn tối thượng "một trong những ... nhất", P1 [W][TT]
-Xếp hạng khơi khơi không nguồn: "một trong những công cụ được ưa chuộng nhất", "một trong những yếu tố quan trọng nhất". Hoặc nêu số liệu nguồn, hoặc bỏ hẳn so sánh.
-- Trước: "Notion hiện là một trong những công cụ quản lý công việc được ưa chuộng nhất hiện nay."
-- Sau: "Notion có 100 triệu người dùng (theo công bố của hãng, 2025)." hoặc bỏ câu.
+Không tự đổi “quý khách” thành “bạn” hoặc thêm lời thân mật.
 
-### A24. Ẩn dụ đầu tư, P1 [W]
-Diễn đạt trải nghiệm dùng sản phẩm như "khoản đầu tư", "lợi nhuận", "đáng đồng tiền bỏ ra". Chỉ giữ khi thật sự nói chuyện tài chính.
+### Trao đổi cá nhân: không cần sửa
 
-## Lớp A, Tàn dư chatbot và bản nháp
+“Mai mình ghé muộn chút nhé, bạn cứ ăn trước đi.”
 
-### A16. Vỏ chatbot, P0 [W][TT]
-"Chúc bạn một ngày tốt lành!", "Hy vọng thông tin này hữu ích!", "Câu hỏi rất hay!", "Hãy cho tôi biết nếu bạn cần thêm nhé!". Bỏ vỏ, giữ nội dung.
+Câu rõ việc, đúng giọng. Không cần chuẩn hóa thành văn thông báo.
 
-### A17. Tuyên bố giới hạn tri thức, P0 [W]
-"tính đến thời điểm hiện tại", "do giới hạn dữ liệu", "theo thông tin hiện có", "có lẽ anh ta đã từng...". Nêu điều nguồn không cho thấy, hoặc cắt. Không trình phỏng đoán thành fact.
+### Tài liệu chuyên môn: không thay từ máy móc
 
-### A18. Tiêu đề bị lặp ở câu đầu, P1 [W]
-Một dòng ngay dưới đề mục nhại lại đề mục. Cắt.
+“Thuật toán tối ưu hóa hàm mục tiêu dưới các ràng buộc đã cho.”
 
-### A19. Kết sáo, P1 [W][TT]
-"Chỉ có thời gian mới trả lời được", "hãy hành động ngay hôm nay", "tương lai đang chờ đón bạn". Kết bằng fact hoặc hành động cụ thể.
+“Tối ưu hóa” có nghĩa chuyên môn ở đây. Đổi thành “làm tốt hơn” sẽ mất độ chính xác.
 
-## Lớp A, Định dạng khuôn
+### Sáng tác: giữ dụng ý
 
-### A20. In đậm trang trí và nhãn + hai chấm, P2 [W]
-"- **Hiệu suất:** hiệu suất được nâng cao..." Bỏ đậm; đổi danh sách nhãn sang văn xuôi khi nhãn không thêm thông tin.
+“Bà đợi. Hết buổi chiều, bà vẫn đợi.”
 
-### A21. Emoji và đường kẻ trang trí, P2 [W][TT]
-Emoji gắn mỗi mục, mũi tên trang trí, kẽ ngang giữa mọi phần. Chuẩn hóa.
+Nếu nhịp chờ là dụng ý của đoạn truyện, giữ sự lặp lại. Không gộp câu chỉ vì ngắn hoặc trùng từ.
 
-### A22. Dấu chấm than dàn trận, P2 [TT]
-"!" như loại dấu câu mặc định, kèm "nhé/đó/nha/bạn nhé" trong văn không cần thân mật. Văn thân mật giữ vừa phải theo mẫu.
+## Khi nào dừng sửa?
 
-## Lớp B, Riêng tiếng Việt
-
-### B1. Giọng dịch (translationese), P1 [TT]
-Ngữ pháp đúng nhưng không người Việt nào viết thế.
-- Trước: "Nó là điều quan trọng cần được xem xét." / "Có một điều cần phải nói rằng..." / "việc thực hiện việc triển khai việc ứng dụng".
-- Sau: "Điều đáng cân nhắc là..." / thẳng vào ý; bỏ chuỗi "việc".
-
-### B2. Xưng hô lắc lư, P1 [TT]
-Trộn "bạn" / "chúng ta" / "mình" / "anh/chị" trong cùng bài. Chọn một hệ theo loại văn và giữ suốt bài.
-
-### B3. Từ vựng khuôn Việt, P1 [TT]
-"tối ưu hóa", "nâng cao", "đột phá", "bứt phá", "nâng tầm", "kiến tạo", "vượt trội", "toàn diện", "chuyên sâu", "trải nghiệm tuyệt vời", "không thể phủ nhận", "tiềm năng to lớn". Chưa có thống kê tần suất công khai (xem sources.md khoảng trống 1), sửa khi cụm, không sa thải một từ đứng một mình.
-
-### B4. Câu bị động kiểu dịch, P2 [HL]
-"được thực hiện bởi", "đã được đưa ra", "yếu tố được xem là". Tiếng Việt chuộng chủ ngữ sớm và động từ mạnh. Chỉ sửa khi kèm dấu khác (đây là dấu [HL]).
-
-### B5. Chuẩn số liệu Việt, quy tắc bắt buộc
-Dấu phẩy thập phân (9,81 triệu); "tệ" thay ký hiệu tiền Trung Quốc trong câu tiếng Việt; tên riêng Latin giữ nguyên; thuật ngữ Trung Quốc latin hóa + giải thích lần đầu.
-
-### B8. Trợ từ cuối câu, tín hiệu NGƯỜI — P2 (chỉ báo, không trừ) [NN][HL]
-"nhé, đấy, cơ, nhỉ, ạ, nghe, nào, thôi, vậy" cuối câu là dấu khẩu ngữ tiếng Việt; đầu ra AI gần như không dùng. Khi viết lại văn thân mật: thêm 1-2 đúng chỗ, không rải đều. Máy quét báo mật độ; 0 trợ từ + nhiều liên từ hình thức = cảnh báo giọng sách vở (văn học thuật/formal thì cảnh báo này bỏ qua).
-
-### B9. Liên từ hình thức thay từ nối tự nhiên, P1 [TT][HL]
-AI chuộng "ngoài ra, bên cạnh đó, hơn nữa, thêm vào đó, do đó, đồng thời, trước hết, tóm lại, nhìn chung". Người viết đời thường dùng "thế là, cơ mà, mà thôi, thật ra, tiện thể, rồi". Sửa: đổi bớt liên từ hình thức theo ngữ cảnh; không đổi trong văn học thuật.
-
-### B10. Mật độ Hán Việt hành chính, P1 [TT]
-"triển khai, ứng dụng, giải pháp, tiến hành, đảm bảo, tăng cường, thúc đẩy, quảng bá, chủ trương, thực hiện" dồn cục tạo giọng công văn. Người viết xen động từ thuần: làm, dùng, đưa ra, chạy thử, lan ra. Giữ khi là thuật ngữ ngành đúng chỗ; chỉ thay khi đang làm từ đệm. Máy quét báo mật độ trên 1000 âm tiết.
-
-### B11. Từ láy, tín hiệu NGƯỜI [NN]
-"lao xao, lấp lánh, nhấp nhô, méo mó, sạch sẽ, gọn gàng": người dùng giàu, AI gần như không sinh từ láy mới. Văn thân mật nên có 1-2 từ láy đúng cảnh. Máy quét đếm bằng danh sách tuyển chọn (~65 từ thường gặp) để giữ độ chính xác.
-
-### B12. Dấu chấm phẩy, P2 [TT]
-Người Việt gần như không dùng ";" trong văn thường; máy hay bản dịch hay dùng. Thay bằng dấu chấm hoặc viết tách câu.
-
-## Lớp B, Giữ lại (chống sửa quá tay)
-
-### B6. Chi tiết mang giọng người, bảo vệ [W]
-Chi tiết lạ có thật ("cô luật sư từng làm tầng trên phòng khám nha của tôi"), cảm xúc lẫn lộn chưa giải quyết, trích dẫn kỳ quặc, lời chêm tự sửa lại mình, khẩu ngữ địa phương đúng một phương ngữ. Những thứ này là điểm cộng, không phải dấu AI.
-
-### B7. Hạn định hợp lệ, bảo vệ [W]
-"có lẽ", "thường là", "đại khái" là thói quen người thật. Chỉ cắt khi chất chồng (A9).
-
-## B13. Dòng từ Hán Việt trừu tượng — P1 [VD][TT]
-
-Văn AI tiếng Việt chứa động từ, danh từ Hán Việt trừu tượng với mật độ gấp 4 lần văn người trong pilot (10,4 so với 2,6 trên 1000 âm tiết, AUC 0,72): triển khai, tối ưu, nâng cao, thúc đẩy, khắc phục, tạo điều kiện, khả thi, bền vững.
-
-Trước (đậm đặc kiểu máy): "Đơn vị triển khai giải pháp tối ưu quy trình, nâng cao hiệu quả và tạo điều kiện thúc đẩy phát triển bền vững."
-
-Sau: "Đơn vị đưa quy trình mới vào dùng cho chắc, chạy nhanh hơn, và để anh em làm việc đỡ mệt."
-
-Ngoại lệ: văn pháp luật, báo chí chính luận, học thuật vốn giàu Hán Việt; chỉ cảnh báo khi mật độ vượt ngưỡng và register không đòi hỏi. Danh sách từng từ lẻ trong pilot bị nhiễu chủ đề (corpus chưa khớp chủ đề từng bài), nên chỉ mật độ là bằng chứng, không kết luận từng từ riêng lẻ.
-
-### B14. Dịch thuật ngữ Anh phổ biến, P2 [TT]
-
-Người viết công nghệ Việt trộn từ Anh thông dụng tự nhiên (skill, repo, commit, push, pull request, review, feedback, deadline, roadmap, checklist, file, link, email, prompt, token, model, deploy, bug, fix). Văn AI mặc định hay dịch hết ra tiếng Việt, thường thành cụm Hán Việt cứng, vừa vụng vừa đẩy mật độ Hán Việt (chỉ số đã đo AUC 0,72) lên nữa.
-
-Trước (kiểu máy): "Vui lòng gửi yêu cầu kéo đến kho mã nguồn; nhóm sẽ xem xét và hợp nhất thay đổi theo lộ trình."
-
-Sau: "Muốn góp code thì gửi pull request vào repo, team sẽ review rồi merge theo roadmap."
-
-Ngoại lệ: văn bản pháp lý, hành chính, báo in theo quy định dùng thuật ngữ Việt, ghi kèm tiếng Anh lần đầu. Trộn từ Anh cũng phải có chừng mực: chừa lại từ thông dụng thôi, cả câu tiếng Anh hoặc tiếng Việt nhập múi kiểu lai căng lại thành dấu khác.
-
-### B8-bổ-sung (sau eval v2 và v4-threads): trợ từ cuối câu tách được ở tầng trả lời ngắn
-
-Eval v2 đo trợ từ cuối câu trên 12 cặp Góc nhìn/Genk/Kenh14: trung vị cả hai bên đều 0 (AUC 0,65 lệch vì vài bài). Kết luận: báo chí 'giọng trẻ' của người thật vẫn ít trợ từ cuối câu.
-
-Eval v4-threads (77 bài Threads + 12 bộ trả lời + 30 cặp AI cùng chủ đề): bài dài của người 27/77 file có trợ từ (35%, tối đa 83,3/1000, trung vị 0), AI chỉ 3/30 (10%, tối đa 8,4/1000); 7/12 bộ trả lời có, trung vị 3,7, tối đa 57,1/1000 tùy chủ đề.
-
-Đối chiếu độc lập bằng ViHSD (16.319 comment Facebook/YouTube nhãn CLEAN): 8,0% comment có trợ từ, trung vị toàn bộ 0/1000, nhóm có trợ từ trung vị 90,9/1000. Kết luận B8 được củng cố ngoài nền tảng Threads: là tín hiệu hiện tượng có/không của register chat, không phải thước đo đều. Dùng làm chỉ báo cho văn trả lời ngắn, không dùng làm dấu hiệu quyết định và không áp cho văn dài.
-
-### B15. Cấu trúc đoạn khẩu ý (đo được ở v2), P1 [VD]
-
-Eval v2 (12 cặp): câu trung bình mỗi đoạn người 1,7 so với AI 7,0 (AUC 1,000, corpus nhỏ nên coi là ước lượng mạnh chứ không tuyệt đối). Văn người viết báo giọng trẻ tách đoạn rất ngắn, gần như mỗi ý một đoạn. AI giữ thói quen gộp 5-7 câu một đoạn dù đổi giọng. Khi viết lại register này: tách đoạn mạnh tay.
-
-### B16. Cụm ẩn dụ biên tập tự chế, P1 [TT]
-
-Có những câu không sai nghĩa nhưng người Việt ít nói vậy. Chúng thường lấy một từ trừu tượng rồi ghép với danh từ bằng một ẩn dụ chưa thành cách nói: "danh từ có điểm tựa", "câu có chuyển động", "nhịp câu bớt đồng phục". Đây không phải lệnh cấm ẩn dụ. Chỉ cần hỏi: người viết đang nói cụ thể về ai, vật gì, việc gì? Nếu có, gọi thẳng ra.
-
-- Trước: "Chọn từ để danh từ có điểm tựa hơn và nhịp câu bớt đồng phục."
-- Sau: "Gọi đúng người, vật hoặc việc đang được nói tới, rồi xen câu dài với câu ngắn."
-
-Không đưa một cụm vào danh mục chỉ vì nghe hơi lạ. Kiểm tra bằng từ điển, ngữ liệu hoặc ít nhất vài văn bản cùng register. Đây là quy tắc tránh câu gượng, chưa phải thống kê AI.
-
-### B17. Bộ khung triển khai ý, P1 [NN][TT]
-
-Văn AI hay đi theo một dàn ý phẳng: câu mở nói điều quan trọng, các câu sau lần lượt "trước hết", "bên cạnh đó", "hơn nữa", rồi câu cuối nhắc lại kết luận. Vấn đề không nằm ở từng từ nối, mà ở chỗ câu sau không thêm thông tin mới hoặc không làm rõ quan hệ với câu trước.
-
-Khi viết lại, dùng chuỗi đơn giản hơn:
-
-1. Nêu người, vật, sự việc hoặc thời điểm đang nói tới.
-2. Thêm fact, lý do, ví dụ hoặc ngoại lệ.
-3. Nêu hệ quả hay giới hạn nếu thật sự có.
-4. Khi đổi chủ thể, gọi tên lại thay vì xoay vòng bốn danh từ trừu tượng.
-
-- Trước: "Quản lý tài chính đóng vai trò quan trọng. Trước hết, cần lập ngân sách. Bên cạnh đó, cần theo dõi chi tiêu. Nhìn chung, đây là giải pháp hiệu quả."
-- Sau: "Tháng này tiền thường đi vào ba khoản: tiền nhà, ăn uống và đi lại. Ghi lại trong 30 ngày sẽ cho thấy khoản nào đang phình ra. Nếu tiền nhà đã chiếm gần hết thu nhập, không thể ép mình theo một tỷ lệ tiết kiệm có sẵn."
-
-Đây là hướng dẫn về mạch lạc và cấu trúc đề thuyết trong tiếng Việt, không phải dấu hiệu để kết luận một văn bản do AI viết.
+Dừng khi văn bản đáp đúng yêu cầu, nghĩa và giọng được giữ, người đọc có thể theo dõi mà không phải đoán. Không viết thêm một lượt chỉ để tránh mọi cờ của máy quét. Với những lựa chọn đều hợp lý, ưu tiên giọng và quy ước của người dùng.

@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Eval corpus v4-threads: register khẩu ngữ thật từ Threads vs AI cùng chủ đề.
-Tái dùng bộ đo của eval_v2. Xuống references/eval-threads.md.
+Tái dùng bộ đo của eval_v2. Xuất research/results/eval-threads.md.
 Chạy: python3 research/eval_threads.py
 """
 import glob, sys
 from collections import Counter
+from pathlib import Path
 sys.path.insert(0, "scripts"); sys.path.insert(0, "research")
 from vi_scan import scan
 from lexical_analysis import toks, dens, auc, FUNCTION, SINO_VERBS, INTENSIFIERS
@@ -74,7 +75,9 @@ def main():
     out.append("\nAI lệch dương: " + ", ".join(f"{w} ({zv:+.1f})" for zv, w in top_ai) + "\n")
     out.append("Người lệch âm: " + ", ".join(f"{w} ({zv:+.1f})" for zv, w in top_hu) + "\n")
 
-    open("references/eval-threads.md", "w", encoding="utf-8").write("".join(out))
+    output = Path("research/results/eval-threads.md")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text("".join(out), encoding="utf-8")
     print("".join(out))
 
 if __name__ == "__main__":

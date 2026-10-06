@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Eval corpus v2: chủ đề khớp từng cặp + thêm register khẩu ý.
 Xuất: bảng AUC từng chỉ số theo register, ngưỡng FP/TP, fightin' words v2,
-ghi references/eval-v2.md. Chạy: python3 research/eval_v2.py
+ghi research/results/eval-v2.md. Chạy: python3 research/eval_v2.py
 """
 import glob, math, sys
 from collections import Counter
+from pathlib import Path
 sys.path.insert(0, "scripts"); sys.path.insert(0, "research")
 from vi_scan import scan
 from lexical_analysis import toks, dens, auc, FUNCTION, SINO_VERBS, INTENSIFIERS
@@ -85,7 +86,9 @@ def main():
             threshold_eval(mh, ma, k, k, out, d)
         out.append("\nFightin' words (chủ đề đã khớp):\n")
         fightin(th, ta, out)
-    open("references/eval-v2.md", "w", encoding="utf-8").write("".join(out))
+    output = Path("research/results/eval-v2.md")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text("".join(out), encoding="utf-8")
     print("".join(out))
 
 if __name__ == "__main__":

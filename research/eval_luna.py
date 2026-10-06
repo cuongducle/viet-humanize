@@ -63,6 +63,8 @@ def main():
             '- Nếu median Luna gần AI cũ ở một chỉ số, đó là tín hiệu có thể xuyên model. Nếu lệch mạnh, nhiều khả năng là tật riêng của model hoặc prompt.\n',
             '- Ngưỡng khóa chỉ có ý nghĩa khi giữ được FP/TP trên Luna; không được chọn lại threshold sau khi xem kết quả.\n']
     text = ''.join(out)
-    Path('references/eval-luna.md').write_text(text, encoding='utf-8')
+    output = Path('research/results/eval-luna.md')
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(text, encoding='utf-8')
     print(text)
 if __name__ == '__main__': main()

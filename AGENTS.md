@@ -1,45 +1,38 @@
-# viet-humanize — bộ quy tắc viết tiếng Việt cho agent
+# viet-humanize
 
-Áp dụng tự động mỗi khi viết hoặc sửa văn xuôi tiếng Việt. Bản đầy đủ kèm nguồn trích dẫn: `SKILL.md` trong repo này.
+Áp dụng khi viết hoặc biên tập tiếng Việt. Bản đầy đủ: [SKILL.md](SKILL.md).
 
-## Nguyên tắc gốc
+## Nguyên tắc
 
-Viết như MỘT người Việt thật viết cho MỘT độc giả cụ thể. Mục tiêu là chất biên tập, không phải chạy điểm tool dò AI.
+- Làm đúng yêu cầu: viết, sửa, dịch, tóm tắt hoặc nhận xét. Không tự sửa chỉ vì người dùng dán văn bản vào.
+- Xét mục đích, người đọc, quan hệ xưng hô và kênh sử dụng. Ưu tiên yêu cầu và mẫu giọng của người dùng; chưa rõ thì viết trung tính.
+- Tự nhiên không đồng nghĩa với thân mật hoặc ngắn. Không áp giọng chat cho báo cáo, tài liệu chuyên môn hay sáng tác.
+- Nếu văn bản đã phù hợp, giữ nguyên. Không bắt người dùng chọn chế độ.
 
-## P0, gặp là sửa
+## Khi viết và sửa
 
-- Vỏ chatbot: "Chúc bạn một ngày tốt lành!", "Hy vọng thông tin này hữu ích!"
-- Mở dàn cảnh: "Trong thời đại công nghệ số hóa ngày nay...", "Hãy cùng tìm hiểu nhé!"
-- "không chỉ X mà còn Y" khi vế phủ định không mang thông tin
-- Câu chốt một dòng nhại lại ý đoạn trên
-- Gạch ngang dài nối câu (—, --)
-- Mượn uy tín không tên: "chuyên gia cho rằng"
+- Giữ dữ kiện, điều kiện, ngoại lệ, mức chắc chắn và quan hệ nguyên nhân. Không đổi “có thể” thành khẳng định chắc chắn.
+- Giữ số liệu, đơn vị, tên riêng, nguồn và trích dẫn. Không thêm dữ kiện hoặc trải nghiệm để bài có vẻ thật hơn.
+- Chỗ đáng ngờ thì nêu điều cần xác minh. Chỉ đổi nội dung khi được phép và có căn cứ.
+- Chỉ sửa file trong phạm vi được giao. Giữ code, lệnh, URL, đường dẫn, cấu hình và cấu trúc bảng trừ khi được yêu cầu đổi.
+- Làm rõ ý mơ hồ, sửa câu vòng vo và từ lệch nghĩa. Chỉ bỏ sự lặp không có tác dụng.
+- Chọn từ theo nghĩa và người đọc, không cấm từ Hán Việt hoặc bắt dùng tiếng Anh. Giữ thuật ngữ cần chính xác.
+- Xưng hô theo từng người nói và quan hệ. Giữ cảm xúc, phương ngữ, hình ảnh và nhịp có dụng ý.
+- Không ép câu dài/ngắn, cắt mọi lời chào hoặc cấm một loại dấu câu. Trình bày theo nội dung và quy ước được yêu cầu.
+- Không thêm lỗi, tiếng lóng, trợ từ hoặc từ láy để giả giọng người. Không tự đổi giá trị hay định dạng dữ liệu máy đọc.
+- Sáng tác có thể hư cấu theo đề bài, nhưng không dùng hư cấu làm bằng chứng thực tế.
 
-## P1, sửa khi cụm lại
+## Kiểm tra và trả kết quả
 
-- Từ khuôn: tối ưu hóa, đột phá, bứt phá, nâng tầm, trải nghiệm tuyệt vời, kiến tạo, mang đến
-- Né động từ gốc: "đóng vai trò là", "được xem là", "sở hữu"
-- Kết sáo: "tương lai tươi sáng", "chỉ có thời gian mới trả lời được"
+Đọc toàn văn trước khi sửa, rồi đối chiếu ý nghĩa và giọng với bản gốc. Với file hoặc bài dài, lưu bản trước và dùng công cụ nếu có Python. Đường dẫn tính từ thư mục cài skill:
 
-## Đặc thù tiếng Việt
+```bash
+python3 scripts/vi_scan.py scan FILE.md
+python3 scripts/vi_scan.py verify TRUOC.md SAU.md
+```
 
-1. Giọng dịch: tránh "Nó là điều quan trọng cần được xem xét". Chủ ngữ sớm, động từ mạnh, tránh chuỗi danh từ hóa.
-2. Xưng hô nhất quán một hệ (bạn / mình / tôi / anh chị), không lắc lư.
-3. Đơn vị Việt Nam: dấu phẩy thập phân (9,81 triệu), "tệ" thay ¥/RMB.
-4. Từ Anh thông dụng GIỮ NGUYÊN: skill, repo, commit, review, feedback, deadline, file, link. Địch "yêu cầu kéo", "thư điện tử".
-5. Viết register chat (caption, reply): trợ từ cuối câu (nhé, đấy, đó, cơ, nhỉ, ạ) là dấu người thật ở câu ngắn; câu cộc xen dài bình thường; Hán Việt trừu tượng và phó từ cường độ kiểu sách vở gần như vắng; xưng hô theo quan hệ (mình, tui, tao, em).
-6. Mỗi câu mới thêm fact, lý do, ví dụ, ngoại lệ hoặc hệ quả. Không tự chế ẩn dụ biên tập.
+Quét trước/sau, rà từng khác biệt. Cờ của máy quét không phải lệnh xóa. `verify` so chuỗi số, URL, code và frontmatter, không kiểm được nghĩa câu. Không đổi bản gốc để làm kiểm tra đạt, không nói đã chạy bước chưa chạy. Câu trả lời ngắn chỉ cần đọc rà.
 
-## Quy trình mỗi lần viết lại
+Trả đúng sản phẩm người dùng cần, không mặc định kèm bảng dấu hiệu hay giải thích dài. Chỉ ghi chú chỗ chưa chắc, thay đổi đáng kể hoặc giới hạn kiểm tra khi cần. Chỉ được nhờ kiểm tra thì chưa sửa.
 
-1. Có repo này: chạy `python3 scripts/vi_scan.py scan FILE` (chỉ Python chuẩn).
-2. Đọc toàn văn, đánh dấu theo mức trên.
-3. Viết lại: giữ nguyên mọi số liệu, tên riêng, URL, code, trích dẫn.
-4. Quét vòng 2 + đọc lại thành tiếng.
-5. Sửa file thì chạy `python3 scripts/vi_scan.py verify TRUOC.md SAU.md` trước khi nộp.
-
-## Trung thực
-
-Skill không đảm bảo vượt qua detector. Không bịa số liệu, nguồn, trải nghiệm cá nhân. Điểm 0 trên máy quét không chứng minh văn là văn người.
-
-Giữ bản này khớp với `SKILL.md` mỗi lần đổi quy tắc.
+Skill không phụ thuộc mô hình cụ thể. Không hứa vượt detector hoặc coi điểm quét thấp là chứng nhận chất lượng. Giữ bản này đồng bộ với `SKILL.md`.
